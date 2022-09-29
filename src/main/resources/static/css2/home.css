@@ -1,5 +1,150 @@
-.home-box {
+.login-div {
     background-color: rgb(0, 61, 124);
     width: 600px;
     border-radius: 30px;
+}
+
+.home-div {
+    background-color: rgb(0, 61, 124);
+    width: 1200px;
+    border-radius: 30px;
+    margin-top: -25px;
+}
+
+.image {
+    position: relative;
+    width: 200px;
+    box-shadow: 0px 0px 0px gray;
+}
+
+.image img {
+    border-radius: 30px;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 22.5%;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.6);
+    background-position: center center;
+    border-radius: 30px;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.image-overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.image-overlay:hover {
+    opacity: 1;
+    box-shadow: 10px 10px 10px black;
+}
+
+.image-overlay:hover > * {
+    transform: translateY(0);
+}
+
+.image-title {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.image-description {
+    font-size: 0.75em;
+    margin-top: 0.25em;
+}
+
+.navi-div {
+    width: 600px;
+    border-radius: 30px;
+    border: 1px solid rgb(0, 61, 124);
+    background-color: rgb(239, 124, 0);
+    color: rgb(0, 61, 124);
+    opacity: 0.9;
+}
+
+.archive-box {
+    width: 600px;
+}
+
+.italicize {
+    font-style: italic;
+}
+
+/* .archive-box img {
+    margin-left: 50px;
+    border-radius: 50px;
+} */
+
+.low-heading-box {
+    display: flex;
+    justify-content: space-between;
+    height: 25px;
+    background-color: lightseagreen;
+    
+}
+
+.low-content-box {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background-color: aquamarine;
+    opacity: 0.9;
+}
+
+.moderate-heading-box {
+    display: flex;
+    justify-content: space-between;
+    height: 25px;
+    background-color: goldenrod;
+    
+}
+
+.moderate-content-box {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background-color: lightgoldenrodyellow;
+    opacity: 0.9;
+}
+
+.high-heading-box {
+    display: flex;
+    justify-content: space-between;
+    height: 25px;
+    background-color: indianred;
+    
+}
+
+.high-content-box {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background-color: pink;
+    opacity: 0.9;
+}
+
+.high-heading-box {
+    display: flex;
+    justify-content: space-between;
+    height: 25px;
+    background-color: rebeccapurple;
+    
+}
+
+.high-content-box {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background-color: slateblue;
+    opacity: 0.9;
 }
