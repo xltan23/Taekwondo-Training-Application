@@ -199,15 +199,11 @@ public class TkdSummaryService {
 
     // Intensity to determine intensity level
     public String intensityLevelCalculator(Integer totalIntensityScore) {
-        if (totalIntensityScore <= 1000) {
+        if (totalIntensityScore <= 3000) {
             return "low";
-        } else if (totalIntensityScore > 1000 && totalIntensityScore <= 3000) {
-            return "low-moderate";
-        } else if (totalIntensityScore > 3000 && totalIntensityScore <= 5000) {
+        } else if (totalIntensityScore > 3000 && totalIntensityScore <= 6000) {
             return "moderate";
-        } else if (totalIntensityScore > 5000 && totalIntensityScore <= 8000) {
-            return "moderate-high";
-        } else if (totalIntensityScore > 8000 && totalIntensityScore <= 10000) {
+        } else if (totalIntensityScore > 6000 && totalIntensityScore <= 10000) {
             return "high";
         } else {
             return "extreme";

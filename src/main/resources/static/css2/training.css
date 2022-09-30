@@ -1,0 +1,99 @@
+.home-div {
+    background-color: rgb(0, 61, 124);
+    width: 1200px;
+    border-radius: 20px;
+    margin-top: -25px;
+}
+
+.navi-div {
+    width: 1200px;
+    border-radius: 30px;
+    border: 1px solid rgb(0, 61, 124);
+    background-color: rgb(239, 124, 0);
+    color: rgb(0, 61, 124);
+    opacity: 0.9;
+}
+
+#end-input {
+    font-size: small;
+    height: 25px;
+}
+
+.heading-div {
+    border: 1px solid black;
+    border-radius: 30px;
+    background-color: steelblue;
+    color: aliceblue;
+    opacity: 0.9;
+}
+
+.workout-heading-box {
+    display: flex;
+    justify-content: center;
+    height: 20px;
+    background-color: lightskyblue;
+}
+
+.workout-content-box {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background-color: lightcyan;
+    opacity: 0.9;
+}
+
+.workout-content-box img {
+    margin-left: 10px;
+    border-radius: 50px;
+}
+
+.image {
+    position: relative;
+    width: 150px;
+    box-shadow: 0px 0px 0px gray;
+}
+
+.image img {
+    border-radius: 30px;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 23;
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 30px;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.image-overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.image-overlay:hover {
+    opacity: 1;
+    box-shadow: 10px 10px 10px black;
+}
+
+.image-overlay:hover > * {
+    transform: translateY(0);
+}
+
+.image-title {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.image-description {
+    font-size: 0.75em;
+    margin-top: 0.25em;
+}

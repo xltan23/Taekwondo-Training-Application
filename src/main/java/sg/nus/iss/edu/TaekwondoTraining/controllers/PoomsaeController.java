@@ -30,7 +30,6 @@ public class PoomsaeController {
     private TkdSummaryService tkdSumSvc;
 
     // Link to access user's Poomsae training page (localhost:8080/poomsae/{user})
-    // Screen display: Access and show temporary workout list | Available Poomsae style workout
     @GetMapping("{user}")
     public String getUserPoomsaeWorkout(
         @PathVariable(name = "user", required = true) String user,
