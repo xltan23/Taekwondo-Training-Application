@@ -19,16 +19,16 @@ import sg.nus.iss.edu.TaekwondoTraining.services.CalculatorService;
 import sg.nus.iss.edu.TaekwondoTraining.services.TkdWorkoutService;
 
 @Controller
-@RequestMapping(path = "/poomsae/stretch-statics")
-public class StretchStaticsController {
-
+@RequestMapping(path = "/poomsae/technique")
+public class PTechniqueController {
+    
     @Autowired
     private TkdWorkoutService tkdWorkSvc;
 
     @Autowired
     private CalculatorService calSvc;
 
-    // Link to access user's stretch-statics page (localhost:8080/poomsae/stretch-statics/{user})
+    // Link to access user's stretch-statics page (localhost:8080/poomsae/technique/{user})
     @GetMapping("{user}")
     public String getUserStretchStatics(
         @PathVariable(name = "user", required = true) String user,
@@ -50,12 +50,12 @@ public class StretchStaticsController {
             model.addAttribute("date", (new Date()).toString());
             model.addAttribute("empty", workoutList.isEmpty());
             model.addAttribute("lastWorkout", lastWorkout);
-            return "stretchStatics";
+            return "poomsaeTechnique";
         }
 
-    // Form info post to (localhost:8080/poomsae/stretch-statics/saveduration)
+    // Form info post to (localhost:8080/poomsae/technique/saveduration)
     // Save workout to temporary workout list 
-    // Return to (localhost:8080/poomsae/stretch-statics/{user})
+    // Return to (localhost:8080/poomsae/technique/{user})
     @PostMapping(value = "/saveduration", consumes = "application/x-www-form-urlencoded", produces = "text/html")
     public String postDuration(@RequestBody MultiValueMap<String,String> form, Model model) {
         String user = form.getFirst("user");
@@ -86,12 +86,12 @@ public class StretchStaticsController {
         // Save workout to temporary workout list
         tkdWorkSvc.save(user, workout);
         String userTrim = user.replaceAll(" ", "%20");
-        return "redirect:/poomsae/stretch-statics/%s".formatted(userTrim);
+        return "redirect:/poomsae/technique/%s".formatted(userTrim);
     }
 
-    // Form info post to (localhost:8080/poomsae/stretch-statics/saverepetition)
+    // Form info post to (localhost:8080/poomsae/technique/saverepetition)
     // Save workout to temporary workout list 
-    // Return to (localhost:8080/poomsae/stretch-statics/{user})
+    // Return to (localhost:8080/poomsae/technique/{user})
     @PostMapping(value = "/saverepetition", consumes = "application/x-www-form-urlencoded", produces = "text/html")
     public String postRepetition(@RequestBody MultiValueMap<String,String> form, Model model) {
         String user = form.getFirst("user");
@@ -120,6 +120,6 @@ public class StretchStaticsController {
         // Save workout to temporary workout list
         tkdWorkSvc.save(user, workout);
         String userTrim = user.replaceAll(" ", "%20");
-        return "redirect:/poomsae/stretch-statics/%s".formatted(userTrim);
+        return "redirect:/poomsae/technique/%s".formatted(userTrim);
     }
 }

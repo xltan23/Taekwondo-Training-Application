@@ -34,27 +34,27 @@
             <!-- Low Intensity Case -->
             <div class="container row" data-th-case="low">
                 <div class="low-heading-box">
-                    <h6>Test Name</h6>
-                    <small class="italicize">Test Time</small>
+                    <h6 data-th-text="${archive.name}"></h6>
+                    <small class="italicize" data-th-text="${archive.time}"></small>
                 </div>
                 <div class="low-content-box">
                     <img class="rounded-circle" data-th-src="@{/images/NUS Logo.jpg}" alt="" width="30px" height="30px">
-                    <span>Test Total Intensity Score</span>
+                    <span data-th-text="${archive.totalIntensityScore}"></span>
                     <img class="rounded-circle" data-th-src="@{/images/NUS Logo.jpg}" alt="" width="30px" height="30px">
-                    <span>Test Intensity Level</span>
+                    <span data-th-text="${archive.intensityLevel}"></span>
                 </div>    
             </div>
             <!-- Moderate Intensity Case -->
             <div class="container row" data-th-case="moderate">
                 <div class="moderate-heading-box">
-                    <h6>Test Name</h6>
-                    <small class="italicize">Test Time</small>
+                    <h6 data-th-text="${archive.name}"></h6>
+                    <small class="italicize" data-th-text="${archive.time}"></small>
                 </div>
                 <div class="moderate-content-box">
                     <img class="rounded-circle" data-th-src="@{/images/NUS Logo.jpg}" alt="" width="30px" height="30px">
-                    <span>Test Total Intensity Score</span>
+                    <span data-th-text="${archive.totalIntensityScore}"></span>
                     <img class="rounded-circle" data-th-src="@{/images/NUS Logo.jpg}" alt="" width="30px" height="30px">
-                    <span>Test Intensity Level</span>
+                    <span data-th-text="${archive.intensityLevel}"></span>
                 </div>    
             </div>
             <!-- High Intensity Case -->

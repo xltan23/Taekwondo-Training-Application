@@ -97,3 +97,156 @@
     font-size: 0.75em;
     margin-top: 0.25em;
 }
+
+.addition-div {
+    width: 600px;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    opacity: 0.7;
+}
+
+.image2 {
+    position: relative;
+    margin-left: 10px;
+    width: 150px;
+    box-shadow: 0px 0px 0px gray;
+}
+
+.image2 img {
+    border-radius: 30px;
+}
+
+.image2-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 30px;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.image2-overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.image2-overlay:hover {
+    opacity: 1;
+    box-shadow: 5px 5px 5px black;
+}
+
+.image2-overlay:hover > * {
+    transform: translateY(0);
+}
+
+.image2-title {
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.image2-lowdescription {
+    font-size: 0.7em;
+    margin-top: 0.25em;
+    font-weight: bold;
+    color: lightseagreen;
+}
+
+.image2-moddescription {
+    font-size: 0.7em;
+    margin-top: 0.25em;
+    font-weight: bold;
+    color: goldenrod;
+}
+
+.image2-highdescription {
+    font-size: 0.7em;
+    margin-top: 0.25em;
+    font-weight: bold;
+    color: indianred;
+}
+
+.image2-extremedescription {
+    font-size: 0.7em;
+    margin-top: 0.25em;
+    font-weight: bold;
+    color: rebeccapurple;
+}
+
+.image2-description2 {
+    font-size: 0.6em;
+    color: lightskyblue;
+}
+
+.form-input-label {
+    font-weight: bold; 
+    font-size: small;    
+}
+
+#duration {
+    width: 61px;
+    font-size: small;
+}
+
+#repetition {
+    width: 51px;
+    font-size: small;
+}
+
+#distance {
+    width: 61px;
+    font-size: small;
+}
+
+#sets {
+    width: 54px;
+    font-size: small;
+}
+
+.training-box {
+    padding-top: 10px;
+    padding-bottom: 1px;
+    border-radius: 30px;
+    opacity: 0.9;
+    background-color: rgb(135, 206, 250, 0.8);
+}
+
+.low-box {
+    padding-top: 10px;
+    padding-bottom: 1px;
+    border-radius: 30px;
+    opacity: 0.9;
+    background-color: rgb(32, 178, 170, 0.8);
+}
+
+.mod-box {
+    padding-top: 10px;
+    padding-bottom: 1px;
+    border-radius: 30px;
+    opacity: 0.9;
+    background-color: rgb(218, 165, 32, 0.8);
+}
+
+.high-box {
+    padding-top: 10px;
+    padding-bottom: 1px;
+    border-radius: 30px;
+    opacity: 0.9;
+    background-color: rgb(205, 92, 92, 0.8);
+}
+
+.extreme-box {
+    padding-top: 10px;
+    padding-bottom: 1px;
+    border-radius: 30px;
+    opacity: 0.9;
+    background-color: rgb(102, 51, 153, 0.8);
+}

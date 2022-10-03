@@ -64,6 +64,7 @@ public class TkdWorkout {
         workout.setDuration(jo.getInt("duration"));
         workout.setRepetition(jo.getInt("repetition"));
         workout.setDistance(jo.getInt("distance"));
+        workout.setSets(jo.getInt("sets"));
         workout.setIntensity(jo.getString("intensity"));
         workout.setIntensityScore(jo.getInt("intensityScore"));
         return workout;
@@ -76,6 +77,7 @@ public class TkdWorkout {
                 .add("duration", duration)
                 .add("repetition", repetition)
                 .add("distance", distance)
+                .add("sets", sets)
                 .add("intensity", intensity)
                 .add("intensityScore", intensityScore)
                 .build();

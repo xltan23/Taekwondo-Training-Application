@@ -1,0 +1,625 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poomsae Stretch and Static Workout</title>
+    <link data-th-href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" data-th-href="@{/css2/training.css}">
+</head>
+<marquee behavior="" direction="" style="background-color: rgb(239,124,0); color: rgb(0,61,124);">
+    <span data-th-text="${username}"></span>, Be sure to end your workout within 2 hours to avoid losing your workout session record (Press the logo to return home)
+</marquee>
+<body data-th-background="@{/images/NUS Background.jpg}" style="background-size: cover; background-blend-mode: overlay; background-color: rgba(255, 255, 255, 0.486)">
+
+    <!-- Date/Time and Log out positioned at top right corner -->
+    <h6 class="text-end"><span data-th-text="${date}"></span></h6>
+    <a class="text-decoration-none" data-th-href="@{/}"><h6 class="text-end">Log out</h6></a>
+    <!-- Home container -->
+    <div class="container text-start mb-3 home-div">
+        <a data-th-href="@{/home?user={user}(user=${username})}">
+            <img class="rounded" data-th-src="@{/images/NUS Logo.jpeg}" alt="" height="100px">
+        </a>
+        <span class="display-6 text-white">Taekwondo</span>
+    </div>
+    <!-- Navigation container -->
+    <a class="text-decoration-none" data-th-href="@{/poomsae/{user}(user=${username})}">
+        <div class="container text-center py-1 mb-3 navi-div">
+            <img class="rounded-circle mx-2" data-th-src="@{/images/Workout Icon.jpg}" alt="" height="30px">
+            <span>Select other training OR End training</span>
+        </div>   
+    </a>
+    <!-- Addition container -->
+    <div class="container text-center mb-2 addition-div" data-th-if="${!empty}">
+        <span data-th-text="${lastWorkout.sets}"></span> set(s) of <span data-th-text="${lastWorkout.name}"></span> has been completed
+    </div>
+    <!-- Workout list and Workout options container -->
+    <div class="container text-center">
+        <div class="container row pt-2 mb-2">
+            <div class="col">
+                <div class="container text-center mod-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Supported Wall Package</div>
+                            <p class="image2-moddescription">Moderate Intensity</p>
+                            <p class="image2-description2">(Front and Side) Supported prep, split, mid-air kick</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/stretch-statics/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Supported Wall Package</span></label>
+                            <input type="hidden" name="repName" value="Supported Wall Package">
+                            <input type="hidden" name="intensity" value="moderate">
+                            <div>
+                                <label for="repetition"><small>Duration</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="180">10-10</option>
+                                    <option value="240">15-10</option>
+                                    <option value="330">20-15</option>
+                                    <option value="450">>30</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center low-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Half Splits Package</div>
+                            <p class="image2-lowdescription">Low Intensity</p>
+                            <p class="image2-description2">Pigeon and Half-Frog Stretch</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/stretch-statics/saveduration" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Half Splits Package</span></label>
+                            <input type="hidden" name="durName" value="Half Splits Package">
+                            <input type="hidden" name="intensity" value="low">
+                            <div>
+                                <label for="duration"><small>Duration</small></label>
+                                <select name="duration" id="duration">
+                                    <option value="60">20s</option>
+                                    <option value="90">30s</option>
+                                    <option value="120">>40s</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center mod-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Splits Package</div>
+                            <p class="image2-moddescription">Moderate Intensity</p>
+                            <p class="image2-description2">Front and Side Splits</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/stretch-statics/saveduration" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Splits Package</span></label>
+                            <input type="hidden" name="durName" value="Splits Package">
+                            <input type="hidden" name="intensity" value="moderate">
+                            <div>
+                                <label for="duration"><small>Duration</small></label>
+                                <select name="duration" id="duration">
+                                    <option value="90">30-30</option>
+                                    <option value="105">45-30</option>
+                                    <option value="150">60-45</option>
+                                    <option value="210">90-60</option>
+                                    <option value="300">>120</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Wall Splits</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Front and Side Kick Splits</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/stretch-statics/saveduration" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Wall Splits</span></label>
+                            <input type="hidden" name="durName" value="Wall Splits">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="duration"><small>Duration</small></label>
+                                <select name="duration" id="duration">
+                                    <option value="120">30s</option>
+                                    <option value="180">45s</option>
+                                    <option value="240">60s</option>
+                                    <option value="300">75s</option>
+                                    <option value="360">>90s</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center low-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Leg Swings</div>
+                            <p class="image2-lowdescription">Low Intensity</p>
+                            <p class="image2-description2">Turning and Side Kick Swings</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/stretch-statics/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Leg Swings</span></label>
+                            <input type="hidden" name="repName" value="Leg Swings">
+                            <input type="hidden" name="intensity" value="low">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="36">10</option>
+                                    <option value="54">15</option>
+                                    <option value="72">20</option>
+                                    <option value="90">>25</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container row pt-2 mb-2">
+            <div class="col">
+                <div class="container text-center low-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Quick Half Push-ups</div>
+                            <p class="image2-lowdescription">Low Intensity</p>
+                            <p class="image2-description2">Fist Pumping</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/stretch-statics/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Quick Half Push-ups</span></label>
+                            <input type="hidden" name="repName" value="Quick Half Push-ups">
+                            <input type="hidden" name="intensity" value="low">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50">50</option>
+                                    <option value="60">>60</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Reverse Fist Push-ups</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Push up with fist facing outwards</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/stretch-statics/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Reverse Fist Push-ups</span></label>
+                            <input type="hidden" name="repName" value="Reverse Fist Push-ups">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">>40</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center low-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Quick Wall Squats</div>
+                            <p class="image2-lowdescription">Low Intensity</p>
+                            <p class="image2-description2">Fast squats while holding the wall/bar</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/stretch-statics/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Quick Wall Squats</span></label>
+                            <input type="hidden" name="repName" value="Quick Wall Squats">
+                            <input type="hidden" name="intensity" value="low">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50">50</option>
+                                    <option value="60">>60</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center low-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Single-Leg Wall Squats</div>
+                            <p class="image2-lowdescription">Low Intensity</p>
+                            <p class="image2-description2">Single-leg squat while holding wall/bar</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/stretch-statics/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Single-Leg Wall Squats</span></label>
+                            <input type="hidden" name="repName" value="Single-Leg Wall Squats">
+                            <input type="hidden" name="intensity" value="low">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50">50</option>
+                                    <option value="60">>60</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Wall Sit</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">90 Degrees between calf and thigh</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/stretch-statics/saveduration" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Wall Sit</span></label>
+                            <input type="hidden" name="durName" value="Wall Sit">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="duration"><small>Duration</small></label>
+                                <select name="duration" id="duration">
+                                    <option value="30">30s</option>
+                                    <option value="45">45s</option>
+                                    <option value="60">60s</option>
+                                    <option value="75">75s</option>
+                                    <option value="90">>90s</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container row pt-2 mb-2">
+            <div class="col">
+                <div class="container text-center mod-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Standard Squats</div>
+                            <p class="image2-moddescription">Moderate Intensity</p>
+                            <p class="image2-description2">Stand-Squat</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/stretch-statics/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Standard Squats</span></label>
+                            <input type="hidden" name="repName" value="Standard Squats">
+                            <input type="hidden" name="intensity" value="moderate">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50">>50</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Jump Squats</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Jump to Squat, Squat to Jump</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/stretch-statics/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Jump Squats</span></label>
+                            <input type="hidden" name="repName" value="Jump Squats">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">>40</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center low-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Side Sit-ups</div>
+                            <p class="image2-lowdescription">Low Intensity</p>
+                            <p class="image2-description2">Fold in from side core</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/stretch-statics/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Side Sit-ups</span></label>
+                            <input type="hidden" name="repName" value="Side Sit-ups">
+                            <input type="hidden" name="intensity" value="low">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="20">10</option>
+                                    <option value="40">20</option>
+                                    <option value="60">30</option>
+                                    <option value="80">40</option>
+                                    <option value="100">50</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center low-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Crunch Thrust</div>
+                            <p class="image2-lowdescription">Low Intensity</p>
+                            <p class="image2-description2">Quick seated 2-leg front thrust</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/stretch-statics/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Crunch Thrust</span></label>
+                            <input type="hidden" name="repName" value="Crunch Thrust">
+                            <input type="hidden" name="intensity" value="low">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50">50</option>
+                                    <option value="60">>60</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center mod-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Plank Package</div>
+                            <p class="image2-moddescription">Moderate Intensity</p>
+                            <p class="image2-description2">Front and Side planks</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/stretch-statics/saveduration" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Plank Package</span></label>
+                            <input type="hidden" name="durName" value="Plank Package">
+                            <input type="hidden" name="intensity" value="moderate">
+                            <div>
+                                <label for="duration"><small>Duration</small></label>
+                                <select name="duration" id="duration">
+                                    <option value="70">30-20</option>
+                                    <option value="105">45-30</option>
+                                    <option value="150">60-45</option>
+                                    <option value="210">90-60</option>
+                                    <option value="300">>120</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

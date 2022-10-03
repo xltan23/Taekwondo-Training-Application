@@ -3,11 +3,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poomsae Training</title>
+    <title>NUS Poomsae Training</title>
     <link data-th-href="@{/css/bootstrap.min.css}" rel="stylesheet">
     <link rel="stylesheet" data-th-href="@{/css2/training.css}">
 </head>
-<marquee behavior="" direction="" style="background-color: black; color: white;">
+<marquee behavior="" direction="" style="background-color: rgb(239,124,0); color: rgb(0,61,124);">
     <span data-th-text="${username}"></span>, Be sure to end your workout within 2 hours to avoid losing your workout session record (Press the logo to return home)
 </marquee>
 <body data-th-background="@{/images/NUS Background.jpg}" style="background-size: cover; background-blend-mode: overlay; background-color: rgba(255, 255, 255, 0.486)" >
@@ -72,7 +72,7 @@
                     <!-- Image link to Stretch & Static Workout Page -->
                     <div class="col image">
                         <a data-th-href="@{/poomsae/stretch-statics/{user}(user=${username})}">
-                            <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                            <img data-th-src="@{/images/Stretch Icon.jpg}" alt="" width="150px" height="150px">
                             <div class="image-overlay">
                                 <div class="image-title">Stretch & Statics</div>
                                 <p class="image-description">Poomsae-based stretch and workout</p>
@@ -81,7 +81,7 @@
                     </div>
                     <!-- Image link to Technique Drill Page -->
                     <div class="col image">
-                        <a data-th-href="@{/poomsae/technique-drill/{user}(user=${username})}">
+                        <a data-th-href="@{/poomsae/technique/{user}(user=${username})}">
                             <img data-th-src="@{/images/Technique Icon.jpg}" alt="" width="150px" height="150px">
                             <div class="image-overlay">
                                 <div class="image-title">Technique Drill</div>
@@ -103,7 +103,5 @@
             </div>
         </div>
     </div>
-
-
 </body>
 </html>

@@ -1,5 +1,6 @@
 package sg.nus.iss.edu.TaekwondoTraining.repositories;
 
+import java.time.Duration;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class TkdWorkoutRepository {
     public void save(String name, String payload) {
         ValueOperations<String,String> valueOp = redisTemplate.opsForValue();
         String userKey = "%s-workout".formatted(name.toLowerCase());
-        valueOp.set(userKey, payload, cacheTime);
+        valueOp.set(userKey, payload, Duration.ofMinutes(cacheTime));
     }
 
     // Retrieve Box of Payload (Empty or Filled)
