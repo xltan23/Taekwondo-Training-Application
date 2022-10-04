@@ -71,17 +71,7 @@ public class PTechniqueController {
         workout.setSets(sets);
         workout.setIntensity(intensity);
         // Perform intensity conversion
-        if (intensity.equals("low")) {
-            workout.setIntensityScore(calSvc.PoomsaeLowDurationCalculator(duration, sets));
-        } else if (intensity.equals("moderate")) {
-            workout.setIntensityScore(calSvc.PoomsaeModDurationCalculator(duration, sets));
-        } else if (intensity.equals("high")) {
-            workout.setIntensityScore(calSvc.PoomsaeHighDurationCalculator(duration, sets));
-        } else if (intensity.equals("extreme")) {
-            workout.setIntensityScore(calSvc.PoomsaeExtremeDurationCalculator(duration, sets));
-        } else {
-            workout.setIntensityScore(0);
-        }
+        workout.setIntensityScore(calSvc.PoomsaeDurationCalculator(intensity, duration, sets));
 
         // Save workout to temporary workout list
         tkdWorkSvc.save(user, workout);
@@ -107,15 +97,7 @@ public class PTechniqueController {
         workout.setSets(sets);
         workout.setIntensity(intensity);
         // Perform intensity conversion
-        if (intensity.equalsIgnoreCase("low")) {
-            workout.setIntensityScore(calSvc.PoomsaeLowRepetitionCalculator(repetition, sets));
-        } else if (intensity.equalsIgnoreCase("moderate")) {
-            workout.setIntensityScore(calSvc.PoomsaeModRepetitionCalculator(repetition, sets));
-        } else if (intensity.equalsIgnoreCase("high")) {
-            workout.setIntensityScore(calSvc.PoomsaeHighRepetitionCalculator(repetition, sets));
-        } else if (intensity.equalsIgnoreCase("extreme")) {
-            workout.setIntensityScore(calSvc.PoomsaeExtremeRepetitionCalculator(repetition, sets));
-        }
+        workout.setIntensityScore(calSvc.PoomsaeRepetitionCalculator(intensity, repetition, sets));
 
         // Save workout to temporary workout list
         tkdWorkSvc.save(user, workout);

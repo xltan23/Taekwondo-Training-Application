@@ -188,16 +188,16 @@
 
 .form-input-label {
     font-weight: bold; 
-    font-size: small;    
+    font-size: small;
 }
 
 #duration {
-    width: 61px;
+    width: 71px;
     font-size: small;
 }
 
 #repetition {
-    width: 51px;
+    width: 61px;
     font-size: small;
 }
 
@@ -207,7 +207,12 @@
 }
 
 #sets {
-    width: 54px;
+    width: 64px;
+    font-size: small;
+}
+
+#grade {
+    width: 88px;
     font-size: small;
 }
 
@@ -222,6 +227,7 @@
 .low-box {
     padding-top: 10px;
     padding-bottom: 1px;
+    height: 300px;
     border-radius: 30px;
     opacity: 0.9;
     background-color: rgb(32, 178, 170, 0.8);
@@ -230,6 +236,7 @@
 .mod-box {
     padding-top: 10px;
     padding-bottom: 1px;
+    height: 300px;
     border-radius: 30px;
     opacity: 0.9;
     background-color: rgb(218, 165, 32, 0.8);
@@ -238,6 +245,7 @@
 .high-box {
     padding-top: 10px;
     padding-bottom: 1px;
+    height: 300px;
     border-radius: 30px;
     opacity: 0.9;
     background-color: rgb(205, 92, 92, 0.8);
@@ -246,6 +254,16 @@
 .extreme-box {
     padding-top: 10px;
     padding-bottom: 1px;
+    height: 300px;
+    border-radius: 30px;
+    opacity: 0.9;
+    background-color: rgb(102, 51, 153, 0.8);
+}
+
+.extreme-box2 {
+    padding-top: 10px;
+    padding-bottom: 1px;
+    height: 325px;
     border-radius: 30px;
     opacity: 0.9;
     background-color: rgb(102, 51, 153, 0.8);
