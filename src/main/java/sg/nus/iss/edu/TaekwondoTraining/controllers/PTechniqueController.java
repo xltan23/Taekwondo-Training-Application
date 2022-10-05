@@ -104,4 +104,31 @@ public class PTechniqueController {
         String userTrim = user.replaceAll(" ", "%20");
         return "redirect:/poomsae/technique/%s".formatted(userTrim);
     }
+
+    // Form info post to (localhost:8080/poomsae/technique/savepoomsae)
+    // Save workout to temporary workout list 
+    // Return to (localhost:8080/poomsae/technique/{user})
+    @PostMapping(value = "/savepoomsae", consumes = "application/x-www-form-urlencoded", produces = "text/html")
+    public String postPoomsae(@RequestBody MultiValueMap<String,String> form, Model model) {
+        String user = form.getFirst("user");
+
+        TkdWorkout workout = new TkdWorkout();
+        workout.setName(form.getFirst("repName"));
+        Integer repetition = Integer.parseInt(form.getFirst("repetition"));
+        Integer grade = Integer.parseInt(form.getFirst("grade"));
+        Integer sets = Integer.parseInt(form.getFirst("sets"));
+        String intensity = form.getFirst("intensity");
+        workout.setDuration(0);
+        workout.setRepetition(repetition*grade);
+        workout.setDistance(0);
+        workout.setSets(sets);
+        workout.setIntensity(intensity);
+        // Perform intensity conversion
+        workout.setIntensityScore(calSvc.PoomsaeRepetitionCalculator(intensity, repetition*grade, sets));
+
+        // Save workout to temporary workout list
+        tkdWorkSvc.save(user, workout);
+        String userTrim = user.replaceAll(" ", "%20");
+        return "redirect:/poomsae/technique/%s".formatted(userTrim);
+    }
 }
