@@ -3,130 +3,127 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NUS Taekwondo Training Archive</title>
+    <title><span data-th-text="${username}"></span>'s' Workout Summary</title>
     <link data-th-href="@{/css/bootstrap.min.css}" rel="stylesheet">
-    <link rel="stylesheet" data-th-href="@{/css2/home.css}">
+    <link rel="stylesheet" data-th-href="@{/css2/training.css}">
 </head>
 <marquee behavior="" direction="" style="background-color: rgb(239,124,0); color: rgb(0,61,124);">
-    <span><span data-th-text="${username}"></span>'s workout archive. </span>
+    <span data-th-text="${username}"></span>, Your workout summary. (Press the logo to return home)
 </marquee>
 <body data-th-background="@{/images/NUS Background.jpg}" style="background-size: cover; background-blend-mode: overlay; background-color: rgba(255, 255, 255, 0.486)">
 
     <!-- Date/Time and Log out positioned at top right corner -->
     <h6 class="text-end"><span data-th-text="${date}"></span></h6>
     <a class="text-decoration-none" data-th-href="@{/}"><h6 class="text-end">Log out</h6></a>
-    <a class="text-decoration-none text-center rounded readme-box" data-th-href="@{/documentation}"><h6 class="text-start">Read me</h6></a>
     <!-- Home container -->
-    <a class="text-decoration-none" data-th-href="@{/home?user={user}(user=${username})}">
-        <div class="container text-center mb-4 home-div">
+    <div class="container text-center mb-5 home-div">
+        <a data-th-href="@{/home?user={user}(user=${username})}">
             <img class="rounded" data-th-src="@{/images/NUS Logo.jpeg}" alt="" height="100px">
-            <span class="display-6 text-white">Taekwondo</span>
-        </div>
-    </a>
-    <!-- Title container -->
-    <div class="container text-center py-1 mb-3 navi-div">
-        <img class="rounded-circle mx-2" data-th-src="@{/images/Workout Icon.jpg}" alt="" height="30px">
-        <span class="h6"><span data-th-text="${username}"></span>'s workout archive</span>
-        <img class="rounded-circle mx-2" data-th-src="@{/images/Workout Icon.jpg}" alt="" height="30px">
-    </div> 
-    <!-- Archive List container -->
-    <div class="container text-center archive-box" data-th-each="archive:${archiveList}">
-        <div data-th-switch="${archive.intensityLevel}">
+        </a>
+        <span class="display-6 text-white">Taekwondo</span>
+    </div>
+    <!-- Summary container -->
+    <div class="container text-center mb-5">
+        <div data-th-switch="${workoutSummary.intensityLevel}">
             <!-- Low Intensity Case -->
             <div class="container row" data-th-case="low">
-                <div class="low-heading-box">
-                    <h6 data-th-text="${archive.name}"></h6>
-                    <small class="italicize" data-th-text="${archive.time}"></small>
+                <div class="low-heading-box2">
+                    <h5 data-th-text="${workoutSummary.name}"></h5>
                 </div>
                 <div class="low-content-box">
                     <img class="rounded-circle" data-th-src="@{/images/Score Icon.png}" alt="" width="30px" height="30px">
-                    &nbsp; &nbsp; &nbsp;<span data-th-text="${archive.totalIntensityScore}"></span>
+                    &nbsp; &nbsp; &nbsp;<span data-th-text="${workoutSummary.totalIntensityScore}"></span>
                 </div>    
                 <div class="low-content-box2">
                     <small>Completed</small> &nbsp;
-                    <small data-th-text="${archive.totalCount}"></small> &nbsp; <small>workout</small> &nbsp;| &nbsp;
+                    <small data-th-text="${workoutSummary.totalCount}"></small> &nbsp; <small>workout</small> &nbsp;| &nbsp;
                     <img class="rounded-circle" data-th-src="@{/images/Low Icon.jpg}" alt="" width="10px" height="10px">
-                    &nbsp; <small data-th-text="${archive.lowCount}"></small> &nbsp;
+                    &nbsp; <small data-th-text="${workoutSummary.lowCount}"></small> &nbsp;
                     <img class="rounded-circle" data-th-src="@{/images/Mod Icon.jpg}" alt="" width="10px" height="10px">
-                    &nbsp; <small data-th-text="${archive.modCount}"></small> &nbsp;
+                    &nbsp; <small data-th-text="${workoutSummary.modCount}"></small> &nbsp;
                     <img class="rounded-circle" data-th-src="@{/images/High Icon.jpg}" alt="" width="10px" height="10px">
-                    &nbsp; <small data-th-text="${archive.highCount}"></small> &nbsp;
+                    &nbsp; <small data-th-text="${workoutSummary.highCount}"></small> &nbsp;
                     <img class="rounded-circle" data-th-src="@{/images/Extreme Icon.jpg}" alt="" width="10px" height="10px">
-                    &nbsp; <small data-th-text="${archive.extremeCount}"></small> &nbsp;
+                    &nbsp; <small data-th-text="${workoutSummary.extremeCount}"></small> &nbsp;
                 </div>
             </div>
             <!-- Moderate Intensity Case -->
             <div class="container row" data-th-case="moderate">
-                <div class="moderate-heading-box">
-                    <h6 data-th-text="${archive.name}"></h6>
-                    <small class="italicize" data-th-text="${archive.time}"></small>
+                <div class="moderate-heading-box2">
+                    <h6 data-th-text="${workoutSummary.name}"></h6>
                 </div>
                 <div class="moderate-content-box">
                     <img class="rounded-circle" data-th-src="@{/images/Score Icon.png}" alt="" width="30px" height="30px">
-                    &nbsp; &nbsp; &nbsp;<span data-th-text="${archive.totalIntensityScore}"></span>
+                    &nbsp; &nbsp; &nbsp;<span data-th-text="${workoutSummary.totalIntensityScore}"></span>
                 </div>    
                 <div class="moderate-content-box2">
                     <small>Completed</small> &nbsp;
-                    <small data-th-text="${archive.totalCount}"></small> &nbsp; <small>workout</small> &nbsp;| &nbsp;
+                    <small data-th-text="${workoutSummary.totalCount}"></small> &nbsp; <small>workout</small> &nbsp;| &nbsp;
                     <img class="rounded-circle" data-th-src="@{/images/Low Icon.jpg}" alt="" width="10px" height="10px">
-                    &nbsp; <small data-th-text="${archive.lowCount}"></small> &nbsp;
+                    &nbsp; <small data-th-text="${workoutSummary.lowCount}"></small> &nbsp;
                     <img class="rounded-circle" data-th-src="@{/images/Mod Icon.jpg}" alt="" width="10px" height="10px">
-                    &nbsp; <small data-th-text="${archive.modCount}"></small> &nbsp;
+                    &nbsp; <small data-th-text="${workoutSummary.modCount}"></small> &nbsp;
                     <img class="rounded-circle" data-th-src="@{/images/High Icon.jpg}" alt="" width="10px" height="10px">
-                    &nbsp; <small data-th-text="${archive.highCount}"></small> &nbsp;
+                    &nbsp; <small data-th-text="${workoutSummary.highCount}"></small> &nbsp;
                     <img class="rounded-circle" data-th-src="@{/images/Extreme Icon.jpg}" alt="" width="10px" height="10px">
-                    &nbsp; <small data-th-text="${archive.extremeCount}"></small> &nbsp;
+                    &nbsp; <small data-th-text="${workoutSummary.extremeCount}"></small> &nbsp;
                 </div>   
             </div>
             <!-- High Intensity Case -->
             <div class="container row" data-th-case="high">
-                <div class="high-heading-box">
-                    <h6 data-th-text="${archive.name}"></h6>
-                    <small class="italicize" data-th-text="${archive.time}"></small>
+                <div class="high-heading-box2">
+                    <h6 data-th-text="${workoutSummary.name}"></h6>
                 </div>
                 <div class="high-content-box">
                     <img class="rounded-circle" data-th-src="@{/images/Score Icon.png}" alt="" width="30px" height="30px">
-                    &nbsp; &nbsp; &nbsp;<span data-th-text="${archive.totalIntensityScore}"></span>
+                    &nbsp; &nbsp; &nbsp;<span data-th-text="${workoutSummary.totalIntensityScore}"></span>
                 </div>    
                 <div class="high-content-box2">
                     <small>Completed</small> &nbsp;
-                    <small data-th-text="${archive.totalCount}"></small> &nbsp; <small>workout</small> &nbsp;| &nbsp;
+                    <small data-th-text="${workoutSummary.totalCount}"></small> &nbsp; <small>workout</small> &nbsp;| &nbsp;
                     <img class="rounded-circle" data-th-src="@{/images/Low Icon.jpg}" alt="" width="10px" height="10px">
-                    &nbsp; <small data-th-text="${archive.lowCount}"></small> &nbsp;
+                    &nbsp; <small data-th-text="${workoutSummary.lowCount}"></small> &nbsp;
                     <img class="rounded-circle" data-th-src="@{/images/Mod Icon.jpg}" alt="" width="10px" height="10px">
-                    &nbsp; <small data-th-text="${archive.modCount}"></small> &nbsp;
+                    &nbsp; <small data-th-text="${workoutSummary.modCount}"></small> &nbsp;
                     <img class="rounded-circle" data-th-src="@{/images/High Icon.jpg}" alt="" width="10px" height="10px">
-                    &nbsp; <small data-th-text="${archive.highCount}"></small> &nbsp;
+                    &nbsp; <small data-th-text="${workoutSummary.highCount}"></small> &nbsp;
                     <img class="rounded-circle" data-th-src="@{/images/Extreme Icon.jpg}" alt="" width="10px" height="10px">
-                    &nbsp; <small data-th-text="${archive.extremeCount}"></small> &nbsp;
+                    &nbsp; <small data-th-text="${workoutSummary.extremeCount}"></small> &nbsp;
                 </div>     
             </div>
             <!-- Extreme Intensity Case -->
             <div class="container row" data-th-case="extreme">
-                <div class="extreme-heading-box">
-                    <h6 data-th-text="${archive.name}"></h6>
-                    <small class="italicize" data-th-text="${archive.time}"></small>
+                <div class="extreme-heading-box2">
+                    <h6 data-th-text="${workoutSummary.name}"></h6>
                 </div>
                 <div class="extreme-content-box">
                     <img class="rounded-circle" data-th-src="@{/images/Score Icon.png}" alt="" width="30px" height="30px">
-                    &nbsp; &nbsp; &nbsp;<span data-th-text="${archive.totalIntensityScore}"></span>
+                    &nbsp; &nbsp; &nbsp;<span data-th-text="${workoutSummary.totalIntensityScore}"></span>
                 </div>    
                 <div class="extreme-content-box2">
                     <small>Completed</small> &nbsp;
-                    <small data-th-text="${archive.totalCount}"></small> &nbsp; <small>workout</small> &nbsp;| &nbsp;
+                    <small data-th-text="${workoutSummary.totalCount}"></small> &nbsp; <small>workout</small> &nbsp;| &nbsp;
                     <img class="rounded-circle" data-th-src="@{/images/Low Icon.jpg}" alt="" width="10px" height="10px">
-                    &nbsp; <small data-th-text="${archive.lowCount}"></small> &nbsp;
+                    &nbsp; <small data-th-text="${workoutSummary.lowCount}"></small> &nbsp;
                     <img class="rounded-circle" data-th-src="@{/images/Mod Icon.jpg}" alt="" width="10px" height="10px">
-                    &nbsp; <small data-th-text="${archive.modCount}"></small> &nbsp;
+                    &nbsp; <small data-th-text="${workoutSummary.modCount}"></small> &nbsp;
                     <img class="rounded-circle" data-th-src="@{/images/High Icon.jpg}" alt="" width="10px" height="10px">
-                    &nbsp; <small data-th-text="${archive.highCount}"></small> &nbsp;
+                    &nbsp; <small data-th-text="${workoutSummary.highCount}"></small> &nbsp;
                     <img class="rounded-circle" data-th-src="@{/images/Extreme Icon.jpg}" alt="" width="10px" height="10px">
-                    &nbsp; <small data-th-text="${archive.extremeCount}"></small> &nbsp;
+                    &nbsp; <small data-th-text="${workoutSummary.extremeCount}"></small> &nbsp;
                 </div>    
             </div>
         </div>
     </div>
 
+    <a class="text-decoration-none" data-th-href="@{/home?user={user}(user=${username})}">
+        <div class="container text-center py-3 message-box">           
+            <h6>Message</h6>
+            <div>
+                Click to return home
+            </div>
+        </div>   
+    </a>
 
 </body>
 </html>

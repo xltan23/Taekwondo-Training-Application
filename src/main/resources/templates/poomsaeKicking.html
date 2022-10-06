@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poomsae Techniques</title>
+    <title>Poomsae Kicking Drills</title>
     <link data-th-href="@{/css/bootstrap.min.css}" rel="stylesheet">
     <link rel="stylesheet" data-th-href="@{/css2/training.css}">
 </head>
@@ -42,24 +42,238 @@
                     <div class="image2">
                         <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
                         <div class="image2-overlay">
-                            <div class="image2-title">Alternate Punching (Horse)</div>
+                            <div class="image2-title">Pyramid Kicking</div>
                             <p class="image2-moddescription">Moderate Intensity</p>
-                            <p class="image2-description2">Alternating punches in horse-riding stance</p>
+                            <p class="image2-description2">Package consisting of raise, set, kicking low-high and high-low</p>
                         </div>
                     </div>
                     <div>
-                        <form action="/poomsae/technique/saverepetition" method="POST">
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
                             <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Alternate Punching (Horse)</span></label>
-                            <input type="hidden" name="repName" value="Alternate Punching (Horse)">
+                            <label for="repName"><span class="form-input-label">Pyramid Kicking</span></label>
+                            <input type="hidden" name="repName" value="Pyramid Kicking">
                             <input type="hidden" name="intensity" value="moderate">
                             <div>
                                 <label for="repetition"><small>Repetition</small></label>
                                 <select name="repetition" id="repetition">
-                                    <option value="32">8</option>
-                                    <option value="40">10</option>
-                                    <option value="64">16</option>
-                                    <option value="80">>20</option>
+                                    <option value="256">3</option>
+                                    <option value="416">5</option>
+                                    <option value="672">8</option>
+                                    <option value="992">10</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Pyramid Kicking (Resistance)</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Strapped band to ankles. Package consisting of raise, set, kicking low-high and high-low</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Pyramid Kicking (Resistance)</span></label>
+                            <input type="hidden" name="repName" value="Pyramid Kicking (Resistance)">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="307">3</option>
+                                    <option value="499">5</option>
+                                    <option value="806">8</option>
+                                    <option value="1190">10</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Taegeuk Kicks</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Consisting of G(1) GB(1) B(2) BR(1) R(1) RB(1)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Taegeuk Kicks</span></label>
+                            <input type="hidden" name="repName" value="Taegeuk Kicks">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="336">6</option>
+                                    <option value="448">8</option>
+                                    <option value="560">10</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Taegeuk Kicks (Resistance)</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Strapped band to ankles. Consisting of G(1) GB(1) B(2) BR(1) R(1) RB(1)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Taegeuk Kicks (Resistance)</span></label>
+                            <input type="hidden" name="repName" value="Taegeuk Kicks (Resistance)">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="420">6</option>
+                                    <option value="560">8</option>
+                                    <option value="700">10</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Dan Kicks</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Consisting of Koryo(3) Keum(1) Taebk(1) Pyong(1)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Dan Kicks</span></label>
+                            <input type="hidden" name="repName" value="Dan Kicks">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="360">6</option>
+                                    <option value="480">8</option>
+                                    <option value="600">10</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container row pt-2 mb-2">
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Dan Kicks (Resistance)</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Consisting of Koryo(3) Keum(1) Taebk(1) Pyong(1)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Dan Kicks (Resistance)</span></label>
+                            <input type="hidden" name="repName" value="Dan Kicks (Resistance)">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="432">6</option>
+                                    <option value="576">8</option>
+                                    <option value="720">10</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Pistol Squat Jumping Front</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Perform pistol squat and jumping front upon standing</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Pistol Squat Jumping Front</span></label>
+                            <input type="hidden" name="repName" value="Pistol Squat Jumping Front">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="290">5/S</option>
+                                    <option value="340">6/S</option>
+                                    <option value="400">7/S</option>
+                                    <option value="560">10/S</option>
                                 </select>
                             </div>
                             <div>
@@ -68,9 +282,470 @@
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
-                                    <option value="5">5</option>
-                                    <option value="8">8</option>
-                                    <option value="11">>10</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Pistol Squat Side</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Perform pistol squat and side kick upon standing</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Pistol Squat Side</span></label>
+                            <input type="hidden" name="repName" value="Pistol Squat Side">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="290">5/S</option>
+                                    <option value="340">6/S</option>
+                                    <option value="400">7/S</option>
+                                    <option value="560">10/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Lunges Kick</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Perform lunge and front/turn/side kick upon standing</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Lunges Kick</span></label>
+                            <input type="hidden" name="repName" value="Lunges Kick">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="288">8/S</option>
+                                    <option value="360">10/S</option>
+                                    <option value="432">12/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">4-Directions</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Perform multiple mid-air front/turn/side kick each direction turn. 1 Kick (3 Sets), 2 Kicks (2 Sets), 3 Kicks (1 Set)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">4-Directions</span></label>
+                            <input type="hidden" name="repName" value="4-Directions">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="720">Front</option>
+                                    <option value="864">Turn</option>
+                                    <option value="864">Side</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container row pt-2 mb-2">
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Single Turning/Side End-Hold</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Support from wall, kick X times and hold for X seconds at the last kick</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Single Turning/Side End-Hold</span></label>
+                            <input type="hidden" name="repName" value="Single Turning/Side End-Hold">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="60">10-10</option>
+                                    <option value="80">10-20</option>
+                                    <option value="80">15-10</option>
+                                    <option value="100">15-20</option>
+                                    <option value="110">20-10</option>
+                                    <option value="120">20-20</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Single Turning/Side End-Hold (Weighted)</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Weights strapped to ankle. Support from wall, kick X times and hold for X seconds at the last kick</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Single Turning/Side End-Hold (Weighted)</span></label>
+                            <input type="hidden" name="repName" value="Single Turning/Side End-Hold (Weighted)">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="72">10-10</option>
+                                    <option value="96">10-20</option>
+                                    <option value="96">15-10</option>
+                                    <option value="120">15-20</option>
+                                    <option value="132">20-10</option>
+                                    <option value="144">20-20</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Single Turning/Side End-Hold (Resistance)</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Band strapped to ankles. Support from wall, kick X times and hold for X seconds at the last kick</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Single Turning/Side End-Hold (Resistance)</span></label>
+                            <input type="hidden" name="repName" value="Single Turning/Side End-Hold (Resistance)">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="75">10-10</option>
+                                    <option value="100">10-20</option>
+                                    <option value="100">15-10</option>
+                                    <option value="125">15-20</option>
+                                    <option value="140">20-10</option>
+                                    <option value="155">20-20</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Single Turning/Side End-Hold (Combined)</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Band and weights strapped to ankles. Support from wall, kick X times and hold for X seconds at the last kick</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Single Turning/Side End-Hold (Combined)</span></label>
+                            <input type="hidden" name="repName" value="Single Turning/Side End-Hold (Combined)">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="80">10-10</option>
+                                    <option value="110">10-20</option>
+                                    <option value="110">15-10</option>
+                                    <option value="140">15-20</option>
+                                    <option value="160">20-10</option>
+                                    <option value="175">20-20</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Double Turning/Side Hold</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Support from wall, hold 3 counts after every kick. Double turn high-high. Double side low-high. </p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Double Turning/Side Hold</span></label>
+                            <input type="hidden" name="repName" value="Double Turning/Side Hold">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="80">8</option>
+                                    <option value="100">10</option>
+                                    <option value="150">15</option>
+                                    <option value="200">20</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container row pt-2 mb-2">
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Double Turning/Side Hold (Combined)</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Both strapped to ankles. Support from wall, hold 3 counts after every kick. Double turn high-high. Double side low-high. </p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Double Turning/Side Hold (Combined)</span></label>
+                            <input type="hidden" name="repName" value="Double Turning/Side Hold (Combined)">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="95">8</option>
+                                    <option value="115">10</option>
+                                    <option value="175">15</option>
+                                    <option value="225">20</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Slow Motion Turning/Side + Snap (Weighted)</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Weights strapped to ankles. Support from wall, 4 counts every kick.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Slow Motion Turning/Side + Snap (Weighted)</span></label>
+                            <input type="hidden" name="repName" value="Slow Motion Turning/Side + Snap (Weighted)">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="162">6/S</option>
+                                    <option value="216">8/S</option>
+                                    <option value="270">10/S</option>
+                                    <option value="324">12/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Slow Motion Turning/Side + Snap (Resistance)</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Band strapped to ankles. Support from wall, 4 counts every kick.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Slow Motion Turning/Side + Snap (Resistance)</span></label>
+                            <input type="hidden" name="repName" value="Slow Motion Turning/Side + Snap (Resistance)">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="175">6/S</option>
+                                    <option value="220">8/S</option>
+                                    <option value="275">10/S</option>
+                                    <option value="330">12/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Slow Motion Turning/Side + Snap (Combined)</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Both strapped to ankles. Support from wall, 4 counts every kick.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Slow Motion Turning/Side + Snap (Combined)</span></label>
+                            <input type="hidden" name="repName" value="Slow Motion Turning/Side + Snap (Combined)">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="190">6/S</option>
+                                    <option value="235">8/S</option>
+                                    <option value="290">10/S</option>
+                                    <option value="350">12/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
                                 </select>
                             </div>
                             <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
@@ -83,24 +758,23 @@
                     <div class="image2">
                         <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
                         <div class="image2-overlay">
-                            <div class="image2-title">Low/High/Inward Block (Forward)</div>
+                            <div class="image2-title">Wall Side Kicks</div>
                             <p class="image2-moddescription">Moderate Intensity</p>
-                            <p class="image2-description2">Block in static forward stance. (Count each block type as 1 set)</p>
+                            <p class="image2-description2">Side kicks towards and against the wall. (Best done after wall splits)</p>
                         </div>
                     </div>
                     <div>
-                        <form action="/poomsae/technique/saverepetition" method="POST">
+                        <form action="/poomsae/kicking/saverepetition" method="POST">
                             <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Low/High/Inward Block (Forward)</span></label>
-                            <input type="hidden" name="repName" value="Low/High/Inward Block (Forward)">
+                            <label for="repName"><span class="form-input-label">Wall Side Kicks</span></label>
+                            <input type="hidden" name="repName" value="Wall Side Kicks">
                             <input type="hidden" name="intensity" value="moderate">
                             <div>
                                 <label for="repetition"><small>Repetition</small></label>
                                 <select name="repetition" id="repetition">
-                                    <option value="64">8/S</option>
                                     <option value="80">10/S</option>
-                                    <option value="128">16/S</option>
-                                    <option value="160">>20/S</option>
+                                    <option value="120">15/S</option>
+                                    <option value="160">20/S</option>
                                 </select>
                             </div>
                             <div>
@@ -109,805 +783,6 @@
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="7">>6</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="container text-center mod-box">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Single/Double Knife Block (Back)</div>
-                            <p class="image2-moddescription">Moderate Intensity</p>
-                            <p class="image2-description2">Block in static back stance</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/saverepetition" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Single/Double Knife Block (Back)</span></label>
-                            <input type="hidden" name="repName" value="Single/Double Knife Block (Back)">
-                            <input type="hidden" name="intensity" value="moderate">
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="64">8/S</option>
-                                    <option value="80">10/S</option>
-                                    <option value="128">16/S</option>
-                                    <option value="160">>20/S</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="7">>6</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="container text-center high-box">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Punching/Pulling (Resistance)</div>
-                            <p class="image2-highdescription">High Intensity</p>
-                            <p class="image2-description2">Punch and pull with resistance band strapped in grip. Performed in static forward stance.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/saverepetition" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Punching/Pulling (Resistance)</span></label>
-                            <input type="hidden" name="repName" value="Punching/Pulling (Resistance)">
-                            <input type="hidden" name="intensity" value="high">
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="80">8/S</option>
-                                    <option value="100">10/S</option>
-                                    <option value="160">16/S</option>
-                                    <option value="200">>20/S</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="4">>3</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="container text-center high-box">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Low/High/Inward Block (Resistance)</div>
-                            <p class="image2-highdescription">High Intensity</p>
-                            <p class="image2-description2">Block with resistance band strapped in grip. Performed in static forward stance.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/saverepetition" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Low/High/Inward Block (Resistance)</span></label>
-                            <input type="hidden" name="repName" value="Low/High/Inward Block (Resistance)">
-                            <input type="hidden" name="intensity" value="high">
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="80">8/S</option>
-                                    <option value="100">10/S</option>
-                                    <option value="160">16/S</option>
-                                    <option value="200">>20/S</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="4">>3</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container row pt-2 mb-2">
-            <div class="col">
-                <div class="container text-center high-box">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Single Fist Block (Resistance)</div>
-                            <p class="image2-highdescription">High Intensity</p>
-                            <p class="image2-description2">Block with resistance band strapped in grip. Performed in static back stance.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/saverepetition" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Single Fist Block (Resistance)</span></label>
-                            <input type="hidden" name="repName" value="Single Fist Block (Resistance)">
-                            <input type="hidden" name="intensity" value="high">
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="80">8/S</option>
-                                    <option value="100">10/S</option>
-                                    <option value="160">16/S</option>
-                                    <option value="200">>20/S</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="4">>3</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="container text-center extreme-box">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Punching (Alternating Stance)</div>
-                            <p class="image2-extremedescription">Extreme Intensity</p>
-                            <p class="image2-description2">Performed in forward stance. Alternate the stance in 2-parts process: Weight shift + Execution</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/saverepetition" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Punching (Alternating Stance)</span></label>
-                            <input type="hidden" name="repName" value="Punching (Alternating Stance)">
-                            <input type="hidden" name="intensity" value="extreme">
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="90">10</option>
-                                    <option value="144">16</option>
-                                    <option value="180">20</option>
-                                    <option value="270">>30</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="4">>3</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="container text-center extreme-box">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Low/High/Inward Block (Alternating Stance)</div>
-                            <p class="image2-extremedescription">Extreme Intensity</p>
-                            <p class="image2-description2">Performed in forward stance. Alternate the stance in 2-parts process: Weight shift + Execution</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/saverepetition" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Low/High/Inward Block (Alternating Stance)</span></label>
-                            <input type="hidden" name="repName" value="Low/High/Inward Block (Alternating Stance)">
-                            <input type="hidden" name="intensity" value="extreme">
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="90">10</option>
-                                    <option value="144">16</option>
-                                    <option value="180">20</option>
-                                    <option value="270">>30</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="4">>3</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="container text-center extreme-box">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Single Knife Block (Alternating Stance)</div>
-                            <p class="image2-extremedescription">Extreme Intensity</p>
-                            <p class="image2-description2">Performed in back stance. Alternate the stance in 2-parts process: Weight shift + Execution</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/saverepetition" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Single Knife Block (Alternating Stance)</span></label>
-                            <input type="hidden" name="repName" value="Single Knife Block (Alternating Stance)">
-                            <input type="hidden" name="intensity" value="extreme">
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="90">10</option>
-                                    <option value="144">16</option>
-                                    <option value="180">20</option>
-                                    <option value="270">>30</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="4">>3</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="container text-center mod-box">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Basic Movements</div>
-                            <p class="image2-moddescription">Moderate Intensity</p>
-                            <p class="image2-description2">Combination of stances,blocks and strikes</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/saverepetition" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Basic Movements</span></label>
-                            <input type="hidden" name="repName" value="Basic Movements">
-                            <input type="hidden" name="intensity" value="moderate">
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="52">1</option>
-                                    <option value="104">2</option>
-                                    <option value="156">3</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container row pt-2 mb-2">
-            <div class="col">
-                <div class="container text-center mod-box">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Movement Package</div>
-                            <p class="image2-moddescription">Moderate Intensity</p>
-                            <p class="image2-description2">Moving forward: Punch+Forward, 3xBlock+Forward, DoubleKnife+Back</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/saverepetition" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Movement Package</span></label>
-                            <input type="hidden" name="repName" value="Movement Package">
-                            <input type="hidden" name="intensity" value="moderate">
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="150">6</option>
-                                    <option value="200">8</option>
-                                    <option value="250">>10</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="4">>3</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="container text-center high-box">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Movement Package (Weighted)</div>
-                            <p class="image2-highdescription">High Intensity</p>
-                            <p class="image2-description2">Weights strapped on waist: Punch + Forward, 3xBlock + Forward, DoubleKnife + Back</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/saverepetition" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Movement Package (Weighted)</span></label>
-                            <input type="hidden" name="repName" value="Movement Package (Weighted)">
-                            <input type="hidden" name="intensity" value="high">
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="180">6</option>
-                                    <option value="240">8</option>
-                                    <option value="300">>10</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="4">>3</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="container text-center extreme-box">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Poomsae by Steps</div>
-                            <p class="image2-extremedescription">Extreme Intensity</p>
-                            <p class="image2-description2">Repeat each step multiple times before advancing</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/savepoomsae" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Poomsae by Steps</span></label>
-                            <input type="hidden" name="repName" value="Poomsae by Steps">
-                            <input type="hidden" name="intensity" value="extreme">
-                            <div>
-                                <label for="grade"><small>Grade</small></label>
-                                <select name="grade" id="grade">
-                                    <option value="180">Il-Jang</option>
-                                    <option value="180">Ee-Jang</option>
-                                    <option value="200">Sam-Jang</option>
-                                    <option value="240">Sa-Jang</option>
-                                    <option value="240">O-Jang</option>
-                                    <option value="240">Yuk-Jang</option>
-                                    <option value="375">Chil-Jang</option>
-                                    <option value="405">Pal-Jang</option>
-                                    <option value="450">Koryo</option>
-                                    <option value="405">Keumgang</option>
-                                    <option value="390">Taebaek</option>
-                                    <option value="315">Pyongwon</option>
-                                    <option value="420">Sipjin</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="3">3</option>
-                                    <option value="5">5</option>
-                                    <option value="10">>8</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="container text-center extreme-box">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Poomsae by Parts</div>
-                            <p class="image2-extremedescription">Extreme Intensity</p>
-                            <p class="image2-description2">Repeat each set of movement (4-6 steps) multiple times before advancing</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/savepoomsae" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Poomsae by Parts</span></label>
-                            <input type="hidden" name="repName" value="Poomsae by Parts">
-                            <input type="hidden" name="intensity" value="extreme">
-                            <div>
-                                <label for="grade"><small>Grade</small></label>
-                                <select name="grade" id="grade">
-                                    <option value="144">Il-Jang</option>
-                                    <option value="144">Ee-Jang</option>
-                                    <option value="160">Sam-Jang</option>
-                                    <option value="192">Sa-Jang</option>
-                                    <option value="192">O-Jang</option>
-                                    <option value="192">Yuk-Jang</option>
-                                    <option value="300">Chil-Jang</option>
-                                    <option value="324">Pal-Jang</option>
-                                    <option value="360">Koryo</option>
-                                    <option value="324">Keumgang</option>
-                                    <option value="312">Taebaek</option>
-                                    <option value="252">Pyongwon</option>
-                                    <option value="336">Sipjin</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="3">3</option>
-                                    <option value="5">5</option>
-                                    <option value="10">>8</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="container text-center high-box">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Poomsae by Components</div>
-                            <p class="image2-highdescription">High Intensity</p>
-                            <p class="image2-description2">Repeat & Alternate each set of movement (Distinct steps). Advancee from one end to another.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/savepoomsae" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Poomsae by Components</span></label>
-                            <input type="hidden" name="repName" value="Poomsae by Components">
-                            <input type="hidden" name="intensity" value="high">
-                            <div>
-                                <label for="grade"><small>Grade</small></label>
-                                <select name="grade" id="grade">
-                                    <option value="200">Il-Sa</option>
-                                    <option value="350">O-Pal</option>
-                                    <option value="600">Kor-Sip</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="3">~5m</option>
-                                    <option value="6">~10m</option>
-                                    <option value="10">>15m</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container row pt-2 mb-2">
-            <div class="col">
-                <div class="container text-center extreme-box2">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Full Poomsae</div>
-                            <p class="image2-extremedescription">Extreme Intensity</p>
-                            <p class="image2-description2">Perform full poomsae</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/savepoomsae" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Full Poomsae</span></label>
-                            <input type="hidden" name="repName" value="Full Poomsae">
-                            <input type="hidden" name="intensity" value="extreme">
-                            <div>
-                                <label for="grade"><small>Grade</small></label>
-                                <select name="grade" id="grade">
-                                    <option value="110">Il-Jang</option>
-                                    <option value="110">Ee-Jang</option>
-                                    <option value="120">Sam-Jang</option>
-                                    <option value="130">Sa-Jang</option>
-                                    <option value="130">O-Jang</option>
-                                    <option value="125">Yuk-Jang</option>
-                                    <option value="160">Chil-Jang</option>
-                                    <option value="170">Pal-Jang</option>
-                                    <option value="180">Koryo</option>
-                                    <option value="170">Keumgang</option>
-                                    <option value="160">Taebaek</option>
-                                    <option value="150">Pyongwon</option>
-                                    <option value="175">Sipjin</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="3">3</option>
-                                    <option value="5">5</option>
-                                    <option value="10">>8</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="container text-center extreme-box2">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Slow Motion Poomsae</div>
-                            <p class="image2-extremedescription">Extreme Intensity</p>
-                            <p class="image2-description2">Perform full poomsae in slow motion. Focus on the details.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/savepoomsae" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Slow Motion Poomsae</span></label>
-                            <input type="hidden" name="repName" value="Slow Motion Poomsae">
-                            <input type="hidden" name="intensity" value="extreme">
-                            <div>
-                                <label for="grade"><small>Grade</small></label>
-                                <select name="grade" id="grade">
-                                    <option value="180">Il-Jang</option>
-                                    <option value="180">Ee-Jang</option>
-                                    <option value="210">Sam-Jang</option>
-                                    <option value="240">Sa-Jang</option>
-                                    <option value="240">O-Jang</option>
-                                    <option value="225">Yuk-Jang</option>
-                                    <option value="270">Chil-Jang</option>
-                                    <option value="300">Pal-Jang</option>
-                                    <option value="330">Koryo</option>
-                                    <option value="300">Keumgang</option>
-                                    <option value="270">Taebaek</option>
-                                    <option value="240">Pyongwon</option>
-                                    <option value="315">Sipjin</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="3">3</option>
-                                    <option value="5">5</option>
-                                    <option value="10">>8</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="container text-center extreme-box2">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Slow Motion Poomsae by Parts</div>
-                            <p class="image2-extremedescription">Extreme Intensity</p>
-                            <p class="image2-description2">Perform poomsae by parts in slow motion multiple times. Focus on the details.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/savepoomsae" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Slow Motion Poomsae by Parts</span></label>
-                            <input type="hidden" name="repName" value="Slow Motion Poomsae by Parts">
-                            <input type="hidden" name="intensity" value="extreme">
-                            <div>
-                                <label for="grade"><small>Grade</small></label>
-                                <select name="grade" id="grade">
-                                    <option value="270">Il-Jang</option>
-                                    <option value="270">Ee-Jang</option>
-                                    <option value="315">Sam-Jang</option>
-                                    <option value="360">Sa-Jang</option>
-                                    <option value="360">O-Jang</option>
-                                    <option value="338">Yuk-Jang</option>
-                                    <option value="405">Chil-Jang</option>
-                                    <option value="450">Pal-Jang</option>
-                                    <option value="495">Koryo</option>
-                                    <option value="450">Keumgang</option>
-                                    <option value="405">Taebaek</option>
-                                    <option value="360">Pyongwon</option>
-                                    <option value="473">Sipjin</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="3">3</option>
-                                    <option value="5">5</option>
-                                    <option value="10">>8</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="container text-center extreme-box2">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Full Poomsae (Weighted)</div>
-                            <p class="image2-extremedescription">Extreme Intensity</p>
-                            <p class="image2-description2">Perform full Poomsae with weights strapped on belt.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/savepoomsae" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Full Poomsae (Weighted)</span></label>
-                            <input type="hidden" name="repName" value="Full Poomsae (Weighted)">
-                            <input type="hidden" name="intensity" value="extreme">
-                            <div>
-                                <label for="grade"><small>Grade</small></label>
-                                <select name="grade" id="grade">
-                                    <option value="140">Il-Jang</option>
-                                    <option value="140">Ee-Jang</option>
-                                    <option value="150">Sam-Jang</option>
-                                    <option value="160">Sa-Jang</option>
-                                    <option value="160">O-Jang</option>
-                                    <option value="155">Yuk-Jang</option>
-                                    <option value="200">Chil-Jang</option>
-                                    <option value="210">Pal-Jang</option>
-                                    <option value="220">Koryo</option>
-                                    <option value="210">Keumgang</option>
-                                    <option value="200">Taebaek</option>
-                                    <option value="190">Pyongwon</option>
-                                    <option value="215">Sipjin</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="3">3</option>
-                                    <option value="5">5</option>
-                                    <option value="10">>8</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
-                                </select>
-                            </div>
-                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="container text-center extreme-box2">
-                    <div class="image2">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
-                        <div class="image2-overlay">
-                            <div class="image2-title">Poomsae by Parts (Weighted)</div>
-                            <p class="image2-extremedescription">Extreme Intensity</p>
-                            <p class="image2-description2">Perform Poomsae by parts (4-6 steps) with weights strapped on belt.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="/poomsae/technique/savepoomsae" method="POST">
-                            <input type="hidden" name="user" data-th-value="${username}">
-                            <label for="repName"><span class="form-input-label">Poomsae by Parts (Weighted)</span></label>
-                            <input type="hidden" name="repName" value="Poomsae by Parts (Weighted)">
-                            <input type="hidden" name="intensity" value="extreme">
-                            <div>
-                                <label for="grade"><small>Grade</small></label>
-                                <select name="grade" id="grade">
-                                    <option value="180">Il-Jang</option>
-                                    <option value="180">Ee-Jang</option>
-                                    <option value="195">Sam-Jang</option>
-                                    <option value="230">Sa-Jang</option>
-                                    <option value="230">O-Jang</option>
-                                    <option value="230">Yuk-Jang</option>
-                                    <option value="330">Chil-Jang</option>
-                                    <option value="360">Pal-Jang</option>
-                                    <option value="395">Koryo</option>
-                                    <option value="360">Keumgang</option>
-                                    <option value="345">Taebaek</option>
-                                    <option value="285">Pyongwon</option>
-                                    <option value="370">Sipjin</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="repetition"><small>Repetition</small></label>
-                                <select name="repetition" id="repetition">
-                                    <option value="3">3</option>
-                                    <option value="5">5</option>
-                                    <option value="10">>8</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="sets"><small>Set Count</small></label>
-                                <select name="sets" id="sets">
-                                    <option value="1">1</option>
                                 </select>
                             </div>
                             <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
@@ -917,5 +792,6 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>

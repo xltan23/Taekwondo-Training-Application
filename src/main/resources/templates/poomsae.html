@@ -15,6 +15,7 @@
     <!-- Date/Time and Log out positioned at top right corner -->
     <h6 class="text-end"><span data-th-text="${date}"></span></h6>
     <a class="text-decoration-none" data-th-href="@{/}"><h6 class="text-end">Log out</h6></a>
+    <a class="text-decoration-none text-center rounded readme-box" data-th-href="@{/documentation}"><h6 class="text-start">Read me</h6></a>
     <!-- Home container -->
     <div class="container text-start mb-3 home-div">
         <a data-th-href="@{/home?user={user}(user=${username})}">
@@ -53,15 +54,15 @@
                         <h6 data-th-text="${workout.name}"></h6>
                     </div>
                     <div class="workout-content-box">
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="30px" height="30px">
+                        <img data-th-src="@{/images/Duration Icon.png}" alt="" width="30px" height="30px">
                         <span data-th-text="${workout.duration}"></span>
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="30px" height="30px">
+                        <img data-th-src="@{/images/Repetition Icon.png}" alt="" width="30px" height="30px">
                         <span data-th-text="${workout.repetition}"></span>
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="30px" height="30px">
+                        <img data-th-src="@{/images/Sets Icon.png}" alt="" width="30px" height="30px">
                         <span data-th-text="${workout.sets}"></span>
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="30px" height="30px">
-                        <span data-th-text="${workout.intensity}"></span>
-                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="30px" height="30px">
+                        <img data-th-src="@{/images/Score Icon.png}" alt="" width="30px" height="30px">
+                        <small data-th-text="${workout.intensity}"></small>
+                        <img data-th-src="@{/images/Intensity Icon.png}" alt="" width="30px" height="30px">
                         <span data-th-text="${workout.intensityScore}"></span>
                     </div>    
                 </div>
@@ -91,7 +92,7 @@
                     </div>
                     <!-- Image link to Kicking Drill Page -->
                     <div class="col image">
-                        <a data-th-href="@{/poomsae/kicking-drill/{user}(user=${username})}">
+                        <a data-th-href="@{/poomsae/kicking/{user}(user=${username})}">
                             <img data-th-src="@{/images/Kicks Icon.jpg}" alt="" width="150px" height="150px">
                             <div class="image-overlay">
                                 <div class="image-title">Kicking Drill</div>

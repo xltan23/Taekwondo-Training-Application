@@ -59,12 +59,34 @@ public class PoomsaeController {
         // Retrieve temporary workout list to calculate total intensity
         List<TkdWorkout> workoutList = tkdWorkSvc.retrieveWorkout(user);
         Integer totalIntensityScore = tkdSumSvc.totalIntensityCalculator(workoutList);
+        Integer lowCount = 0;
+        Integer modCount = 0;
+        Integer highCount = 0;
+        Integer extremeCount = 0;
+        for (int i = 0; i < workoutList.size(); i++) {
+            TkdWorkout workout = workoutList.get(i);
+            String workoutIntensity = workout.getIntensity();
+            if (workoutIntensity.equals("low")) {
+                lowCount += 1;
+            } else if (workoutIntensity.equals("moderate")) {
+                modCount += 1;
+            } else if (workoutIntensity.equals("high")) {
+                highCount += 1;
+            } else if (workoutIntensity.equals("extreme")) {
+                extremeCount += 1;
+            }
+        }
         String intensityLevel = tkdSumSvc.intensityLevelCalculator(totalIntensityScore);
 
         // Create workout summary
         TkdSummary ts = new TkdSummary();
         ts.setName(form.getFirst("workoutName"));
         ts.setTime((new Date()).toString());
+        ts.setTotalCount(workoutList.size());
+        ts.setLowCount(lowCount);
+        ts.setModCount(modCount);
+        ts.setHighCount(highCount);
+        ts.setExtremeCount(extremeCount);
         ts.setTotalIntensityScore(totalIntensityScore);
         ts.setIntensityLevel(intensityLevel);
 

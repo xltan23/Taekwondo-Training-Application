@@ -34,14 +34,7 @@ public class StretchStaticsController {
         @PathVariable(name = "user", required = true) String user,
         Model model) {
             List<TkdWorkout> workoutList = tkdWorkSvc.retrieveWorkout(user);
-            // Reversed list order to display latest list item on top
-            List<TkdWorkout> reverseWorkout = new LinkedList<>();
-            if (workoutList.size() != 0) {
-                for (int i = workoutList.size()-1; i < -1; i--) {
-                    TkdWorkout workout = workoutList.get(i);
-                    reverseWorkout.add(workout);
-                }
-            }
+
             TkdWorkout lastWorkout = new TkdWorkout();
             if (workoutList.size() != 0) {
                 lastWorkout = workoutList.get(workoutList.size()-1);
