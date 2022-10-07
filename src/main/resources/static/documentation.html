@@ -1,0 +1,121 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taekwondo Application Documentation Page</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css2/training.css">
+</head>
+<marquee behavior="" direction="" style="background-color: rgb(239,124,0); color: rgb(0,61,124);">
+    Taekwondo Application Documentation Page
+</marquee>
+<body background="./images/NUS Background.jpg" style="background-size: cover; background-blend-mode: overlay; background-color: rgba(255, 255, 255, 0.486)" >
+
+    <!-- Home container -->
+    <div class="container text-center my-2 home-div2">
+        <img class="rounded" src="./images/NUS Logo.jpeg" alt="" height="100px">
+        <span class="display-6 text-white">Taekwondo</span>
+    </div>
+    <!-- Icons Legend -->
+    <div class="container text-center bg-black text-white">
+        <h6>Legend</h6>
+    </div>
+    <div class="container text-start bg-white mb-2">
+        <div class="container">
+            <img src="./images/Duration Icon.png" alt="" width="30px" height="30px">
+            <small>
+                Duration: A duration score is calculated according to the time spent
+                performing a particular workout. This calculation is dependent on how 
+                intense the workout is.
+            </small>
+        </div>
+        <div class="container">
+            <img src="./images/Repetition Icon.png" alt="" width="30px" height="30px">
+            <small>
+                Repetition: A repetition score is calculated according to the number
+                of reps performed. This calculation is dependent on how 
+                intense the workout is.
+            </small>
+        </div>
+        <div class="container">
+            <img src="./images/Sets Icon.png" alt="" width="30px" height="30px">
+            <small>
+                Sets: Number of sets performed for particular workout.
+            </small>
+        </div>
+        <div class="container">
+            <img src="./images/Score Icon.png" alt="" width="30px" height="30px">
+            <small>
+                Intensity level: The intensity level the workout is class under.
+            </small>
+        </div>
+        <div class="container">
+            <img src="./images/Intensity Icon.png" alt="" width="30px" height="30px">
+            <small>
+                Intensity score: An intensity score takes into account the duration/repetition 
+                score, no. of sets performed and an intensity-dependent multiplier
+                to generate final score. 
+            </small>
+        </div>
+    </div>
+    <!-- Training Box -->
+    <div class="container text-center bg-black text-white">
+        <h6>Training Box</h6>
+    </div>
+    <div class="container bg-white mb-2">
+        <div class="container training-center">
+            <div class="image2">
+                <img src="./images/NUS Logo.jpg" alt="" width="150px" height="150px">
+                <div class="image2-overlay">
+                    <div class="image2-title">Workout Title</div>
+                    <p class="image2-moddescription">Intensity Level</p>
+                    <p class="image2-description2">Brief workout description</p>
+                </div>
+            </div>
+        </div>
+            <small>
+                Upon hover, each image overlay displays the name of workout, the intensity level 
+                and a brief description of the workout.
+                Intensity level is class into 4 levels: &nbsp;
+            </small>
+            <img class="rounded-circle" src="./images/Low Icon.jpg" alt="" width="10px" height="10px">
+            <small>Low</small> &nbsp;
+            <img class="rounded-circle" src="./images/Mod Icon.jpg" alt="" width="10px" height="10px">
+            <small>Moderate</small> &nbsp;
+            <img class="rounded-circle" src="./images/High Icon.jpg" alt="" width="10px" height="10px">
+            <small>High</small> &nbsp;
+            <img class="rounded-circle" src="./images/Extreme Icon.jpg" alt="" width="10px" height="10px">
+            <small>Extreme</small> &nbsp;
+            <small>
+                This colour will also be reflected in the cell containing the image and dropdown options.
+            </small>
+        <div class="container my-2 training-center">
+            <label for="duration">Duration/Repetition &nbsp;</label>
+            <select name="duration" id="duration">
+                <option value="10">10</option>
+                <option value="12">12/S</option>
+                <option value="35">20-15</option>
+            </select>
+            &nbsp;
+            <label for="sets">Set Count &nbsp;</label>
+            <select name="sets" id="sets">
+                <option value="1">1</option>
+            </select>
+        </div>
+            <small>
+                Dropdown options allow users to select specific number of duration/repetition per set.
+                Each specific duration/repetition has a score tied to it and scores may not necessarily
+                be proportionate to the number. Higher end number or intensity yield exponentially higher 
+                scores thereby making it more rewarding to perform those for shorter workout sessions.
+                In the example above, 10 just means 10s or 10 reps. 12/S means 12 per side (On each leg).
+                XX-XX is usually indicative of a package drill. 20-15 may mean 20 reps of kick and 15s hold.
+            </small>
+    </div>
+    <!-- Poomsae Documentation -->
+    <div class="container text-center bg-black text-white">
+        <h6>Poomsae Box</h6>
+    </div>
+
+</body>
+</html>

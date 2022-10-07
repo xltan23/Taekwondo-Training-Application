@@ -9,7 +9,6 @@ public class TkdWorkout {
     private String name;
     private Integer duration;
     private Integer repetition;
-    private Integer distance;
     private Integer sets;
     private String intensity;
     private Integer intensityScore;
@@ -31,12 +30,6 @@ public class TkdWorkout {
     }
     public void setRepetition(Integer repetition) {
         this.repetition = repetition;
-    }
-    public Integer getDistance() {
-        return distance;
-    }
-    public void setDistance(Integer distance) {
-        this.distance = distance;
     }
     public Integer getSets() {
         return sets;
@@ -63,7 +56,6 @@ public class TkdWorkout {
         workout.setName(jo.getString("name"));
         workout.setDuration(jo.getInt("duration"));
         workout.setRepetition(jo.getInt("repetition"));
-        workout.setDistance(jo.getInt("distance"));
         workout.setSets(jo.getInt("sets"));
         workout.setIntensity(jo.getString("intensity"));
         workout.setIntensityScore(jo.getInt("intensityScore"));
@@ -76,7 +68,6 @@ public class TkdWorkout {
                 .add("name", name)
                 .add("duration", duration)
                 .add("repetition", repetition)
-                .add("distance", distance)
                 .add("sets", sets)
                 .add("intensity", intensity)
                 .add("intensityScore", intensityScore)

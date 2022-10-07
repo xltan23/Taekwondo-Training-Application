@@ -60,7 +60,7 @@ public class StretchStaticsController {
         String intensity = form.getFirst("intensity");
         workout.setDuration(duration);
         workout.setRepetition(0);
-        workout.setDistance(0);
+        // workout.setDistance(0);
         workout.setSets(sets);
         workout.setIntensity(intensity);
         // Perform intensity conversion
@@ -86,7 +86,7 @@ public class StretchStaticsController {
         String intensity = form.getFirst("intensity");
         workout.setDuration(0);
         workout.setRepetition(repetition);
-        workout.setDistance(0);
+        // workout.setDistance(0);
         workout.setSets(sets);
         workout.setIntensity(intensity);
         // Perform intensity conversion

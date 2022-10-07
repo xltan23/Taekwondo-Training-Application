@@ -420,6 +420,12 @@
     opacity: 0.9;
 }
 
+.home-div2 {
+    background-color: rgb(0, 61, 124);
+    width: 1200px;
+    border-radius: 30px;
+}
+
 .readme-box {
     display: flex;
     justify-content: center;
@@ -429,4 +435,9 @@
     width: 80px;
     background-color: rgb(0, 61, 124);
     color: rgb(239, 124, 0);
+}
+
+.training-center {
+    display: flex;
+    justify-content: center;
 }
