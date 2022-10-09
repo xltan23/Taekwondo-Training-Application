@@ -1,0 +1,720 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arms Workout</title>
+    <link data-th-href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" data-th-href="@{/css2/training.css}">
+</head>
+<marquee behavior="" direction="" style="background-color: rgb(239,124,0); color: rgb(0,61,124);">
+    <span data-th-text="${username}"></span>, Be sure to end your workout within 2 hours to avoid losing your workout session record (Press the logo to return home)
+</marquee>
+<body data-th-background="@{/images/NUS Background.jpg}" style="background-size: cover; background-blend-mode: overlay; background-color: rgba(255, 255, 255, 0.486)">
+
+    <!-- Date/Time and Log out positioned at top right corner -->
+    <h6 class="text-end"><span data-th-text="${date}"></span></h6>
+    <a class="text-decoration-none" data-th-href="@{/}"><h6 class="text-end">Log out</h6></a>
+    <a class="text-decoration-none text-center rounded readme-box" data-th-href="@{/documentation.html}"><h6 class="text-start">Read me</h6></a>
+    <!-- Home container -->
+    <div class="container text-start mb-3 home-div">
+        <a data-th-href="@{/home?user={user}(user=${username})}">
+            <img class="rounded" data-th-src="@{/images/NUS Logo.jpeg}" alt="" height="100px">
+        </a>
+        <span class="display-6 text-white">Taekwondo</span>
+    </div>
+    <!-- Navigation container -->
+    <a class="text-decoration-none" data-th-href="@{/workout/{user}(user=${username})}">
+        <div class="container text-center py-1 mb-3 navi-div">
+            <img class="rounded-circle mx-2" data-th-src="@{/images/Workout Icon.jpg}" alt="" height="30px">
+            <span>Select other training OR End training</span>
+        </div>   
+    </a>
+    <!-- Addition container -->
+    <div class="container text-center mb-2 addition-div" data-th-if="${!empty}">
+        <span data-th-text="${lastWorkout.sets}"></span> set(s) of <span data-th-text="${lastWorkout.name}"></span> has been completed
+    </div>
+    <!-- Workout list and Workout options container -->
+    <div class="container text-center">
+        <div class="container row pt-2 mb-2">
+            <div class="col">
+                <div class="container text-center mod-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Standard Push-ups</div>
+                            <p class="image2-moddescription">Moderate Intensity</p>
+                            <p class="image2-description2">Proper form push up</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/arms/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Standard Push-ups</span></label>
+                            <input type="hidden" name="repName" value="Standard Push-ups">
+                            <input type="hidden" name="intensity" value="moderate">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50">50</option>
+                                    <option value="60">>60</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value=">5">6</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Archer Push-ups</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Wide arm push up to left and right alternating</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/arms/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Archer Push-ups</span></label>
+                            <input type="hidden" name="repName" value="Archer Push-ups">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">>40</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value=">5">6</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Diamond Push-ups</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Narrow arm push-up</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/arms/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Diamond Push-ups</span></label>
+                            <input type="hidden" name="repName" value="Diamond Push-ups">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">>40</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value=">5">6</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Single-arm Push-ups</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">One arm push-up</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/arms/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Single-arm Push-ups</span></label>
+                            <input type="hidden" name="repName" value="Single-arm Push-ups">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="10">5/S</option>
+                                    <option value="16">8/S</option>
+                                    <option value="20">10/S</option>
+                                    <option value="30">15/S</option>
+                                    <option value="40">>20/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value=">5">6</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Push-up Hold</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Without touching the floor, push-up and hold position</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/arms/saveduration" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Push-up Hold</span></label>
+                            <input type="hidden" name="durName" value="Push-up Hold">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="duration"><small>Duration</small></label>
+                                <select name="duration" id="duration">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50">>50</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="6">>5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container row pt-2 mb-2">
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Pull-up</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Standard overhand grip pull-up.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/arms/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Pull-up</span></label>
+                            <input type="hidden" name="repName" value="Pull-up">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="3">3</option>
+                                    <option value="5">5</option>
+                                    <option value="8">8</option>
+                                    <option value="10">10</option>
+                                    <option value="12">>12</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="6">>5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Pull-up Hold</div>
+                            <p class="image2-extremedescription">High Intensity</p>
+                            <p class="image2-description2">Pull-up and hold position</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/arms/saveduration" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Pull-up Hold</span></label>
+                            <input type="hidden" name="durName" value="Pull-up Hold">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="duration"><small>Duration</small></label>
+                                <select name="duration" id="duration">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50">>50</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="6">>5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Dips</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Between 2 bars, descend till elbows and shoulders are square</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/arms/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Dips</span></label>
+                            <input type="hidden" name="repName" value="Dips">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="reptition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="5">5</option>
+                                    <option value="8">8</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">>20</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value=">5">6</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Chest Press</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Bench press with free weights</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/arms/savegym" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Chest Press</span></label>
+                            <input type="hidden" name="repName" value="Chest Press">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="weights"><small>Weights</small></label>
+                                <select name="weights" id="weights">
+                                    <option value="7">1/10 mass</option>
+                                    <option value="10">1/8 mass</option>
+                                    <option value="12">1/6 mass</option>
+                                    <option value="15">1/5 mass</option>
+                                    <option value="20">1/4 mass</option>
+                                    <option value="25">1/3 mass</option>
+                                    <option value="30">1/2 mass</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="reptition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="6">6</option>
+                                    <option value="8">8</option>
+                                    <option value="10">10</option>
+                                    <option value="12">12</option>
+                                    <option value="15">>15</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="6">>5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Shoulder Press</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Inclined bench press with free weights</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/arms/savegym" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Shoulder Press</span></label>
+                            <input type="hidden" name="repName" value="Shoulder Press">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="weights"><small>Weights</small></label>
+                                <select name="weights" id="weights">
+                                    <option value="7">1/10 mass</option>
+                                    <option value="10">1/8 mass</option>
+                                    <option value="12">1/6 mass</option>
+                                    <option value="15">1/5 mass</option>
+                                    <option value="20">1/4 mass</option>
+                                    <option value="25">1/3 mass</option>
+                                    <option value="30">1/2 mass</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="6">6</option>
+                                    <option value="8">8</option>
+                                    <option value="10">10</option>
+                                    <option value="12">12</option>
+                                    <option value="15">>15</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="6">>5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container row pt-2 mb-2">
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Bench Press</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Bench press with barbell and weights</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/arms/savegym" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Bench Press</span></label>
+                            <input type="hidden" name="repName" value="Bench Press">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="weights"><small>Weights</small></label>
+                                <select name="weights" id="weights">
+                                    <option value="15">1/2 mass</option>
+                                    <option value="20">3/5 mass</option>
+                                    <option value="30">7/10 mass</option>
+                                    <option value="50">4/5 mass</option>
+                                    <option value="80">9/10 mass</option>
+                                    <option value="110">Your mass</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="reptition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="3">3</option>
+                                    <option value="5">5</option>
+                                    <option value="8">8</option>
+                                    <option value="10">10</option>
+                                    <option value="12">>12</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="6">>5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center mod-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Bench Flys</div>
+                            <p class="image2-moddescription">Moderate Intensity</p>
+                            <p class="image2-description2">Bench press with barbell and weights</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/arms/savegym" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Bench Flys</span></label>
+                            <input type="hidden" name="repName" value="Bench Flys">
+                            <input type="hidden" name="intensity" value="moderate">
+                            <div>
+                                <label for="weights"><small>Weights</small></label>
+                                <select name="weights" id="weights">
+                                    <option value="15">1/10 mass</option>
+                                    <option value="20">1/8 mass</option>
+                                    <option value="25">1/6 mass</option>
+                                    <option value="30">1/5 mass</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="8">8</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">>20</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="6">>5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center mod-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Pendulum Swings</div>
+                            <p class="image2-moddescription">Moderate Intensity</p>
+                            <p class="image2-description2">Extend free weight above chest and bring it over and beyond your head</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/arms/savegym" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Pendulum Swings</span></label>
+                            <input type="hidden" name="repName" value="Pendulum Swings">
+                            <input type="hidden" name="intensity" value="moderate">
+                            <div>
+                                <label for="weights"><small>Weights</small></label>
+                                <select name="weights" id="weights">
+                                    <option value="5">1/8 mass</option>
+                                    <option value="7">1/6 mass</option>
+                                    <option value="10">1/5 mass</option>
+                                    <option value="12">1/4 mass</option>
+                                    <option value="15">1/3 mass</option>
+                                    <option value="22">1/2 mass</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="8">8</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">>20</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="6">>5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Bicep Curls</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Alternate weight lifts</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/arms/savegym" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Bicep Curls</span></label>
+                            <input type="hidden" name="repName" value="Bicep Curls">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="weights"><small>Weights</small></label>
+                                <select name="weights" id="weights">
+                                    <option value="17">1/10 mass</option>
+                                    <option value="20">1/8 mass</option>
+                                    <option value="24">1/6 mass</option>
+                                    <option value="28">1/5 mass</option>
+                                    <option value="35">1/4 mass</option>
+                                    <option value="40">1/3 mass</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="8">8</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">>20</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="6">>5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Overhead Tricep Extension</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2"></p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/arms/savegym" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Overhead Tricep Extension</span></label>
+                            <input type="hidden" name="repName" value="Overhead Tricep Extension">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="weights"><small>Weights</small></label>
+                                <select name="weights" id="weights">
+                                    <option value="10">1/8 mass</option>
+                                    <option value="15">1/6 mass</option>
+                                    <option value="20">1/5 mass</option>
+                                    <option value="24">1/4 mass</option>
+                                    <option value="30">1/3 mass</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="8">8</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">>20</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="6">>5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

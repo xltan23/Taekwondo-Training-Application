@@ -1,0 +1,164 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running Drills</title>
+    <link data-th-href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" data-th-href="@{/css2/training.css}">
+</head>
+<marquee behavior="" direction="" style="background-color: rgb(239,124,0); color: rgb(0,61,124);">
+    <span data-th-text="${username}"></span>, Be sure to end your workout within 2 hours to avoid losing your workout session record (Press the logo to return home)
+</marquee>
+<body data-th-background="@{/images/NUS Background.jpg}" style="background-size: cover; background-blend-mode: overlay; background-color: rgba(255, 255, 255, 0.486)">
+
+    <!-- Date/Time and Log out positioned at top right corner -->
+    <h6 class="text-end"><span data-th-text="${date}"></span></h6>
+    <a class="text-decoration-none" data-th-href="@{/}"><h6 class="text-end">Log out</h6></a>
+    <a class="text-decoration-none text-center rounded readme-box" data-th-href="@{/documentation.html}"><h6 class="text-start">Read me</h6></a>
+    <!-- Home container -->
+    <div class="container text-start mb-3 home-div">
+        <a data-th-href="@{/home?user={user}(user=${username})}">
+            <img class="rounded" data-th-src="@{/images/NUS Logo.jpeg}" alt="" height="100px">
+        </a>
+        <span class="display-6 text-white">Taekwondo</span>
+    </div>
+    <!-- Navigation container -->
+    <a class="text-decoration-none" data-th-href="@{/workout/{user}(user=${username})}">
+        <div class="container text-center py-1 mb-3 navi-div">
+            <img class="rounded-circle mx-2" data-th-src="@{/images/Workout Icon.jpg}" alt="" height="30px">
+            <span>Select other training OR End training</span>
+        </div>   
+    </a>
+    <!-- Addition container -->
+    <div class="container text-center mb-2 addition-div" data-th-if="${!empty}">
+        <span data-th-text="${lastWorkout.sets}"></span> set(s) of <span data-th-text="${lastWorkout.name}"></span> has been completed
+    </div>
+    <!-- Workout list and Workout options container -->
+    <div class="container text-center">
+        <div class="container row pt-2 mb-2">
+            <div class="col">
+                <div class="container text-center mod-box">
+                    <div class="running-img image2">
+                        <img data-th-src="@{/images/LONG DISTANCE JOG.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Long Distance Jog</div>
+                            <p class="image2-moddescription">Extreme Intensity</p>
+                            <p class="image2-description2">Run long distance in moderate-slow pace</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/running/saveduration" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Long Distance Jog</span></label>
+                            <input type="hidden" name="durName" value="Long Distance Jog">
+                            <input type="hidden" name="intensity" value="moderate">
+                            <div>
+                                <label for="duration"><small>Distance</small></label>
+                                <select name="duration" id="duration">
+                                    <option value="5000">5km</option>
+                                    <option value="6000">6km</option>
+                                    <option value="7000">7km</option>
+                                    <option value="8000">8km</option>
+                                    <option value="10000">10km</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="running-img image2">
+                        <img data-th-src="@{/images/UNCOMFORTABLE.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Uncomfortable Pace</div>
+                            <p class="image2-highdescription">Extreme Intensity</p>
+                            <p class="image2-description2">Run moderate distance in moderate-fast pace</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/running/saveduration" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Uncomfortable Pace</span></label>
+                            <input type="hidden" name="durName" value="Uncomfortable Pace">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="duration"><small>Distance</small></label>
+                                <select name="duration" id="duration">
+                                    <option value="1600">1.6km</option>
+                                    <option value="2400">2.4km</option>
+                                    <option value="3200">3.2km</option>
+                                    <option value="4000">4.0km</option>
+                                    <option value="4800">4.8km</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="running-img image2">
+                        <img data-th-src="@{/images/INTERVALS.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Interval Sprints</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Sprint short distance in fastest pace</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/workout/running/saveduration" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Interval Sprints</span></label>
+                            <input type="hidden" name="durName" value="Interval Sprints">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="duration"><small>Distance</small></label>
+                                <select name="duration" id="duration">
+                                    <option value="100">100m</option>
+                                    <option value="200">200m</option>
+                                    <option value="400">400m</option>
+                                    <option value="600">600m</option>
+                                    <option value="800">800m</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

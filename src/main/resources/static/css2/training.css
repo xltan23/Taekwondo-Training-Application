@@ -218,6 +218,11 @@
     font-size: small;
 }
 
+#weights {
+    width: 85px;
+    font-size: small;
+}
+
 .training-box {
     padding-top: 10px;
     padding-bottom: 1px;
@@ -429,9 +434,9 @@
 .readme-box {
     display: flex;
     justify-content: center;
-    position: absolute;
+    position: sticky;
     top: 520px;
-    right: 5px;
+    left: 5px;
     width: 80px;
     background-color: rgb(0, 61, 124);
     color: rgb(239, 124, 0);
@@ -440,4 +445,8 @@
 .training-center {
     display: flex;
     justify-content: center;
+}
+
+.running-img {
+    margin-left: 80px;
 }
