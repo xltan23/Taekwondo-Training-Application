@@ -137,4 +137,22 @@ public class CalculatorService {
         Integer intensityScore = (int)is;
         return intensityScore;
     }
+
+    public String MessageGenerator(Integer totalIntensityScore) {
+        if (totalIntensityScore <= 500) {
+            return "ARE YOU EVEN TRYING??!!?!";
+        } else if (totalIntensityScore > 500 && totalIntensityScore <= 1500) {
+            return "Not quite enough! You might want to attempt another session...";
+        } else if (totalIntensityScore > 1500 && totalIntensityScore <= 3000) {
+            return "Seems like a chill session today. Aim to work more next time!";
+        } else if (totalIntensityScore > 3000 && totalIntensityScore <= 5000) {
+            return "Pretty decent job! Sufficient to maintain your fitness.";
+        } else if (totalIntensityScore > 5000 && totalIntensityScore <= 8000) {
+            return "Fantastic job! Keep up this intensity & good things are coming";
+        } else if (totalIntensityScore > 8000 && totalIntensityScore <= 10000) {
+            return "Excellent work! Another step closer to greatness";
+        } else {
+            return "Well done for hitting the maximum intensity today! +1 to Perfection";
+        }
+    }
 }

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import sg.nus.iss.edu.TaekwondoTraining.models.TkdSummary;
 import sg.nus.iss.edu.TaekwondoTraining.models.TkdWorkout;
+import sg.nus.iss.edu.TaekwondoTraining.services.CalculatorService;
 import sg.nus.iss.edu.TaekwondoTraining.services.TkdSummaryService;
 import sg.nus.iss.edu.TaekwondoTraining.services.TkdWorkoutService;
 
@@ -28,6 +29,9 @@ public class PoomsaeController {
 
     @Autowired
     private TkdSummaryService tkdSumSvc;
+
+    @Autowired
+    private CalculatorService calSvc;
 
     // Link to access user's Poomsae training page (localhost:8080/poomsae/{user})
     @GetMapping("{user}")
@@ -96,6 +100,7 @@ public class PoomsaeController {
         model.addAttribute("username", user);
         model.addAttribute("date", (new Date()).toString());
         model.addAttribute("workoutSummary", ts);
+        model.addAttribute("message", calSvc.MessageGenerator(totalIntensityScore));
         return "summary";
     }
 }
