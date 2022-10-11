@@ -152,7 +152,7 @@ public class CalculatorService {
         } else if (totalIntensityScore > 8000 && totalIntensityScore <= 10000) {
             return "Excellent work! Another step closer to greatness";
         } else {
-            return "Well done for hitting the maximum intensity today! +1 to Perfection";
+            return "Well done for hitting the perfect intensity today!";
         }
     }
 }

@@ -182,6 +182,211 @@ public class TkdWorkoutService {
                         .build();
                     newPayload = ja.toString();
                     break;
+                case 11:
+                    ja = Json.createArrayBuilder()
+                        .add(list.get(0).toJson())
+                        .add(list.get(1).toJson())
+                        .add(list.get(2).toJson())
+                        .add(list.get(3).toJson())
+                        .add(list.get(4).toJson())
+                        .add(list.get(5).toJson())
+                        .add(list.get(6).toJson())
+                        .add(list.get(7).toJson())
+                        .add(list.get(8).toJson())
+                        .add(list.get(9).toJson())
+                        .add(list.get(10).toJson())
+                        .build();
+                    newPayload = ja.toString();
+                    break;
+                case 12:
+                    ja = Json.createArrayBuilder()
+                        .add(list.get(0).toJson())
+                        .add(list.get(1).toJson())
+                        .add(list.get(2).toJson())
+                        .add(list.get(3).toJson())
+                        .add(list.get(4).toJson())
+                        .add(list.get(5).toJson())
+                        .add(list.get(6).toJson())
+                        .add(list.get(7).toJson())
+                        .add(list.get(8).toJson())
+                        .add(list.get(9).toJson())
+                        .add(list.get(10).toJson())
+                        .add(list.get(11).toJson())
+                        .build();
+                    newPayload = ja.toString();
+                    break;
+                case 13:
+                    ja = Json.createArrayBuilder()
+                        .add(list.get(0).toJson())
+                        .add(list.get(1).toJson())
+                        .add(list.get(2).toJson())
+                        .add(list.get(3).toJson())
+                        .add(list.get(4).toJson())
+                        .add(list.get(5).toJson())
+                        .add(list.get(6).toJson())
+                        .add(list.get(7).toJson())
+                        .add(list.get(8).toJson())
+                        .add(list.get(9).toJson())
+                        .add(list.get(10).toJson())
+                        .add(list.get(11).toJson())
+                        .add(list.get(12).toJson())
+                        .build();
+                    newPayload = ja.toString();
+                    break;
+                case 14:
+                    ja = Json.createArrayBuilder()
+                        .add(list.get(0).toJson())
+                        .add(list.get(1).toJson())
+                        .add(list.get(2).toJson())
+                        .add(list.get(3).toJson())
+                        .add(list.get(4).toJson())
+                        .add(list.get(5).toJson())
+                        .add(list.get(6).toJson())
+                        .add(list.get(7).toJson())
+                        .add(list.get(8).toJson())
+                        .add(list.get(9).toJson())
+                        .add(list.get(10).toJson())
+                        .add(list.get(11).toJson())
+                        .add(list.get(12).toJson())
+                        .add(list.get(13).toJson())
+                        .build();
+                    newPayload = ja.toString();
+                    break;
+                case 15:
+                    ja = Json.createArrayBuilder()
+                        .add(list.get(0).toJson())
+                        .add(list.get(1).toJson())
+                        .add(list.get(2).toJson())
+                        .add(list.get(3).toJson())
+                        .add(list.get(4).toJson())
+                        .add(list.get(5).toJson())
+                        .add(list.get(6).toJson())
+                        .add(list.get(7).toJson())
+                        .add(list.get(8).toJson())
+                        .add(list.get(9).toJson())
+                        .add(list.get(10).toJson())
+                        .add(list.get(11).toJson())
+                        .add(list.get(12).toJson())
+                        .add(list.get(13).toJson())
+                        .add(list.get(14).toJson())
+                        .build();
+                    newPayload = ja.toString();
+                    break;
+                case 16:
+                    ja = Json.createArrayBuilder()
+                        .add(list.get(0).toJson())
+                        .add(list.get(1).toJson())
+                        .add(list.get(2).toJson())
+                        .add(list.get(3).toJson())
+                        .add(list.get(4).toJson())
+                        .add(list.get(5).toJson())
+                        .add(list.get(6).toJson())
+                        .add(list.get(7).toJson())
+                        .add(list.get(8).toJson())
+                        .add(list.get(9).toJson())
+                        .add(list.get(10).toJson())
+                        .add(list.get(11).toJson())
+                        .add(list.get(12).toJson())
+                        .add(list.get(13).toJson())
+                        .add(list.get(14).toJson())
+                        .add(list.get(15).toJson())
+                        .build();
+                    newPayload = ja.toString();
+                    break;
+                case 17:
+                    ja = Json.createArrayBuilder()
+                        .add(list.get(0).toJson())
+                        .add(list.get(1).toJson())
+                        .add(list.get(2).toJson())
+                        .add(list.get(3).toJson())
+                        .add(list.get(4).toJson())
+                        .add(list.get(5).toJson())
+                        .add(list.get(6).toJson())
+                        .add(list.get(7).toJson())
+                        .add(list.get(8).toJson())
+                        .add(list.get(9).toJson())
+                        .add(list.get(10).toJson())
+                        .add(list.get(11).toJson())
+                        .add(list.get(12).toJson())
+                        .add(list.get(13).toJson())
+                        .add(list.get(14).toJson())
+                        .add(list.get(15).toJson())
+                        .add(list.get(16).toJson())
+                        .build();
+                    newPayload = ja.toString();
+                    break;
+                case 18:
+                    ja = Json.createArrayBuilder()
+                        .add(list.get(0).toJson())
+                        .add(list.get(1).toJson())
+                        .add(list.get(2).toJson())
+                        .add(list.get(3).toJson())
+                        .add(list.get(4).toJson())
+                        .add(list.get(5).toJson())
+                        .add(list.get(6).toJson())
+                        .add(list.get(7).toJson())
+                        .add(list.get(8).toJson())
+                        .add(list.get(9).toJson())
+                        .add(list.get(10).toJson())
+                        .add(list.get(11).toJson())
+                        .add(list.get(12).toJson())
+                        .add(list.get(13).toJson())
+                        .add(list.get(14).toJson())
+                        .add(list.get(15).toJson())
+                        .add(list.get(16).toJson())
+                        .add(list.get(17).toJson())
+                        .build();
+                    newPayload = ja.toString();
+                    break;
+                case 19:
+                    ja = Json.createArrayBuilder()
+                        .add(list.get(0).toJson())
+                        .add(list.get(1).toJson())
+                        .add(list.get(2).toJson())
+                        .add(list.get(3).toJson())
+                        .add(list.get(4).toJson())
+                        .add(list.get(5).toJson())
+                        .add(list.get(6).toJson())
+                        .add(list.get(7).toJson())
+                        .add(list.get(8).toJson())
+                        .add(list.get(9).toJson())
+                        .add(list.get(10).toJson())
+                        .add(list.get(11).toJson())
+                        .add(list.get(12).toJson())
+                        .add(list.get(13).toJson())
+                        .add(list.get(14).toJson())
+                        .add(list.get(15).toJson())
+                        .add(list.get(16).toJson())
+                        .add(list.get(17).toJson())
+                        .add(list.get(18).toJson())
+                        .build();
+                    newPayload = ja.toString();
+                    break;
+                case 20:
+                    ja = Json.createArrayBuilder()
+                        .add(list.get(0).toJson())
+                        .add(list.get(1).toJson())
+                        .add(list.get(2).toJson())
+                        .add(list.get(3).toJson())
+                        .add(list.get(4).toJson())
+                        .add(list.get(5).toJson())
+                        .add(list.get(6).toJson())
+                        .add(list.get(7).toJson())
+                        .add(list.get(8).toJson())
+                        .add(list.get(9).toJson())
+                        .add(list.get(10).toJson())
+                        .add(list.get(11).toJson())
+                        .add(list.get(12).toJson())
+                        .add(list.get(13).toJson())
+                        .add(list.get(14).toJson())
+                        .add(list.get(15).toJson())
+                        .add(list.get(16).toJson())
+                        .add(list.get(17).toJson())
+                        .add(list.get(18).toJson())
+                        .add(list.get(19).toJson())
+                        .build();
+                    newPayload = ja.toString();
+                    break;
             }
             return newPayload;
         }

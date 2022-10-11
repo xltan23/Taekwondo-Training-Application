@@ -26,6 +26,18 @@ public class TkdSummaryController {
     public String getUserSummary(@PathVariable(name = "user", required = true) String user, Model model) {
         // Retrieve workout archive list
         List<TkdSummary> archiveList = tkdSumSvc.retrieveArchive(user);
+        Integer personalBest = 0;
+        String dateAchieved = "";
+        if (archiveList.size() != 0) {
+            for (int i = 0; i < archiveList.size(); i++) {
+                TkdSummary archive = archiveList.get(i);
+                Integer score = archive.getTotalIntensityScore();
+                if (score > personalBest) {
+                    personalBest = score;
+                    dateAchieved = archive.getTime();
+                }
+            }
+        }
         List<TkdSummary> reversedList = new LinkedList<>();
         if (archiveList.size() != 0) {
             for (int i = archiveList.size()-1; i > -1; i--) {
@@ -35,6 +47,8 @@ public class TkdSummaryController {
         }
         model.addAttribute("username", user.toUpperCase());
         model.addAttribute("date", (new Date()).toString());
+        model.addAttribute("personalBest", personalBest);
+        model.addAttribute("dateAchieved", dateAchieved);
         model.addAttribute("archiveList", reversedList);
         return "archive";
     }

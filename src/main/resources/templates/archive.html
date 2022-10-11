@@ -16,6 +16,7 @@
     <!-- Date/Time and Log out positioned at top right corner -->
     <h6 class="text-end"><span data-th-text="${date}"></span></h6>
     <a class="text-decoration-none" data-th-href="@{/}"><h6 class="text-end">Log out</h6></a>
+    <!-- Read Me container -->
     <a class="text-decoration-none text-center rounded readme-box" data-th-href="@{/documentation.html}"><h6 class="text-start">Read me</h6></a>
     <!-- Home container -->
     <a class="text-decoration-none" data-th-href="@{/home?user={user}(user=${username})}">
@@ -25,10 +26,8 @@
         </div>
     </a>
     <!-- Title container -->
-    <div class="container text-center py-1 mb-3 navi-div">
-        <img class="rounded-circle mx-2" data-th-src="@{/images/Workout Icon.jpg}" alt="" height="30px">
-        <span class="h6"><span data-th-text="${username}"></span>'s workout archive</span>
-        <img class="rounded-circle mx-2" data-th-src="@{/images/Workout Icon.jpg}" alt="" height="30px">
+    <div class="container text-center mb-3 pb-div">
+        Personal Best Score: <b><span class="italicize" data-th-text="${personalBest}"></span></b> achieved on <b><span class="italicize" data-th-text="${dateAchieved}"></span></b>
     </div> 
     <!-- Archive List container -->
     <div class="container text-center archive-box" data-th-each="archive:${archiveList}">
