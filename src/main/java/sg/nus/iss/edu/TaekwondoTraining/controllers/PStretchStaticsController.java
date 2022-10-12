@@ -18,18 +18,18 @@ import sg.nus.iss.edu.TaekwondoTraining.services.CalculatorService;
 import sg.nus.iss.edu.TaekwondoTraining.services.TkdWorkoutService;
 
 @Controller
-@RequestMapping(path = "/workout/arms")
-public class ArmsController {
-    
+@RequestMapping(path = "/poomsae/stretch-statics")
+public class PStretchStaticsController {
+
     @Autowired
     private TkdWorkoutService tkdWorkSvc;
 
     @Autowired
     private CalculatorService calSvc;
 
-    // Link to access user's arms workout page (localhost:8080/workout/arms/{user})
+    // Link to access user's stretch-statics page (localhost:8080/poomsae/stretch-statics/{user})
     @GetMapping("{user}")
-    public String getUserArmsWorkout(
+    public String getUserStretchStatics(
         @PathVariable(name = "user", required = true) String user,
         Model model) {
             List<TkdWorkout> workoutList = tkdWorkSvc.retrieveWorkout(user);
@@ -42,12 +42,12 @@ public class ArmsController {
             model.addAttribute("date", (new Date()).toString());
             model.addAttribute("empty", workoutList.isEmpty());
             model.addAttribute("lastWorkout", lastWorkout);
-            return "armsWorkout";
+            return "stretchStatics";
         }
 
-    // Form info post to (localhost:8080/workout/arms/saveduration)
+    // Form info post to (localhost:8080/poomsae/stretch-statics/saveduration)
     // Save workout to temporary workout list 
-    // Return to (localhost:8080/workout/arms/{user})
+    // Return to (localhost:8080/poomsae/stretch-statics/{user})
     @PostMapping(value = "/saveduration", consumes = "application/x-www-form-urlencoded", produces = "text/html")
     public String postDuration(@RequestBody MultiValueMap<String,String> form, Model model) {
         String user = form.getFirst("user");
@@ -59,20 +59,21 @@ public class ArmsController {
         String intensity = form.getFirst("intensity");
         workout.setDuration(duration);
         workout.setRepetition(0);
+        // workout.setDistance(0);
         workout.setSets(sets);
         workout.setIntensity(intensity);
         // Perform intensity conversion
-        workout.setIntensityScore(calSvc.ArmsDurationCalculator(intensity, duration, sets));
+        workout.setIntensityScore(calSvc.PoomsaeDurationCalculator(intensity, duration, sets));
 
         // Save workout to temporary workout list
         tkdWorkSvc.save(user, workout);
         String userTrim = user.replaceAll(" ", "%20");
-        return "redirect:/workout/arms/%s".formatted(userTrim);
+        return "redirect:/poomsae/stretch-statics/%s".formatted(userTrim);
     }
 
-    // Form info post to (localhost:8080/workout/arms/saverepetition)
+    // Form info post to (localhost:8080/poomsae/stretch-statics/saverepetition)
     // Save workout to temporary workout list 
-    // Return to (localhost:8080/workout/arms/{user})
+    // Return to (localhost:8080/poomsae/stretch-statics/{user})
     @PostMapping(value = "/saverepetition", consumes = "application/x-www-form-urlencoded", produces = "text/html")
     public String postRepetition(@RequestBody MultiValueMap<String,String> form, Model model) {
         String user = form.getFirst("user");
@@ -84,40 +85,15 @@ public class ArmsController {
         String intensity = form.getFirst("intensity");
         workout.setDuration(0);
         workout.setRepetition(repetition);
+        // workout.setDistance(0);
         workout.setSets(sets);
         workout.setIntensity(intensity);
         // Perform intensity conversion
-        workout.setIntensityScore(calSvc.ArmsRepetitionCalculator(intensity, repetition, sets));
+        workout.setIntensityScore(calSvc.PoomsaeRepetitionCalculator(intensity, repetition, sets));
 
         // Save workout to temporary workout list
         tkdWorkSvc.save(user, workout);
         String userTrim = user.replaceAll(" ", "%20");
-        return "redirect:/workout/arms/%s".formatted(userTrim);
-    }
-
-    // Form info post to (localhost:8080/workout/arms/savegym)
-    // Save workout to temporary workout list 
-    // Return to (localhost:8080/workout/arms/{user})
-    @PostMapping(value = "/savegym", consumes = "application/x-www-form-urlencoded", produces = "text/html")
-    public String postGym(@RequestBody MultiValueMap<String,String> form, Model model) {
-        String user = form.getFirst("user");
-
-        TkdWorkout workout = new TkdWorkout();
-        workout.setName(form.getFirst("repName"));
-        Integer weights = Integer.parseInt(form.getFirst("weights"));
-        Integer repetition = Integer.parseInt(form.getFirst("repetition"));
-        Integer sets = Integer.parseInt(form.getFirst("sets"));
-        String intensity = form.getFirst("intensity");
-        workout.setDuration(0);
-        workout.setRepetition(repetition);
-        workout.setSets(sets);
-        workout.setIntensity(intensity);
-        // Perform intensity conversion
-        workout.setIntensityScore(repetition*weights*sets);
-
-        // Save workout to temporary workout list
-        tkdWorkSvc.save(user, workout);
-        String userTrim = user.replaceAll(" ", "%20");
-        return "redirect:/workout/arms/%s".formatted(userTrim);
+        return "redirect:/poomsae/stretch-statics/%s".formatted(userTrim);
     }
 }

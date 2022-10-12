@@ -1,7 +1,6 @@
 package sg.nus.iss.edu.TaekwondoTraining.controllers;
 
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,18 +18,18 @@ import sg.nus.iss.edu.TaekwondoTraining.services.CalculatorService;
 import sg.nus.iss.edu.TaekwondoTraining.services.TkdWorkoutService;
 
 @Controller
-@RequestMapping(path = "/poomsae/stretch-statics")
-public class StretchStaticsController {
-
+@RequestMapping(path = "/kyorugi/technique")
+public class KTechniqueController {
+    
     @Autowired
     private TkdWorkoutService tkdWorkSvc;
 
     @Autowired
     private CalculatorService calSvc;
 
-    // Link to access user's stretch-statics page (localhost:8080/poomsae/stretch-statics/{user})
+    // Link to access user's arms workout page (localhost:8080/kyorugi/technique/{user})
     @GetMapping("{user}")
-    public String getUserStretchStatics(
+    public String getUserTechnique(
         @PathVariable(name = "user", required = true) String user,
         Model model) {
             List<TkdWorkout> workoutList = tkdWorkSvc.retrieveWorkout(user);
@@ -43,12 +42,12 @@ public class StretchStaticsController {
             model.addAttribute("date", (new Date()).toString());
             model.addAttribute("empty", workoutList.isEmpty());
             model.addAttribute("lastWorkout", lastWorkout);
-            return "stretchStatics";
+            return "kyorugiTechnique";
         }
 
-    // Form info post to (localhost:8080/poomsae/stretch-statics/saveduration)
+    // Form info post to (localhost:8080/kyorugi/technique/saveduration)
     // Save workout to temporary workout list 
-    // Return to (localhost:8080/poomsae/stretch-statics/{user})
+    // Return to (localhost:8080/kyorugi/technique/{user})
     @PostMapping(value = "/saveduration", consumes = "application/x-www-form-urlencoded", produces = "text/html")
     public String postDuration(@RequestBody MultiValueMap<String,String> form, Model model) {
         String user = form.getFirst("user");
@@ -60,21 +59,20 @@ public class StretchStaticsController {
         String intensity = form.getFirst("intensity");
         workout.setDuration(duration);
         workout.setRepetition(0);
-        // workout.setDistance(0);
         workout.setSets(sets);
         workout.setIntensity(intensity);
         // Perform intensity conversion
-        workout.setIntensityScore(calSvc.PoomsaeDurationCalculator(intensity, duration, sets));
+        workout.setIntensityScore(calSvc.KyorugiDurationCalculator(intensity, duration, sets));
 
         // Save workout to temporary workout list
         tkdWorkSvc.save(user, workout);
         String userTrim = user.replaceAll(" ", "%20");
-        return "redirect:/poomsae/stretch-statics/%s".formatted(userTrim);
+        return "redirect:/kyorugi/technique/%s".formatted(userTrim);
     }
 
-    // Form info post to (localhost:8080/poomsae/stretch-statics/saverepetition)
+    // Form info post to (localhost:8080/kyorugi/technique/saverepetition)
     // Save workout to temporary workout list 
-    // Return to (localhost:8080/poomsae/stretch-statics/{user})
+    // Return to (localhost:8080/kyorugi/technique/{user})
     @PostMapping(value = "/saverepetition", consumes = "application/x-www-form-urlencoded", produces = "text/html")
     public String postRepetition(@RequestBody MultiValueMap<String,String> form, Model model) {
         String user = form.getFirst("user");
@@ -86,15 +84,14 @@ public class StretchStaticsController {
         String intensity = form.getFirst("intensity");
         workout.setDuration(0);
         workout.setRepetition(repetition);
-        // workout.setDistance(0);
         workout.setSets(sets);
         workout.setIntensity(intensity);
         // Perform intensity conversion
-        workout.setIntensityScore(calSvc.PoomsaeRepetitionCalculator(intensity, repetition, sets));
+        workout.setIntensityScore(calSvc.KyorugiRepetitionCalculator(intensity, repetition, sets));
 
         // Save workout to temporary workout list
         tkdWorkSvc.save(user, workout);
         String userTrim = user.replaceAll(" ", "%20");
-        return "redirect:/poomsae/stretch-statics/%s".formatted(userTrim);
+        return "redirect:/kyorugi/technique/%s".formatted(userTrim);
     }
 }

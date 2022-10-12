@@ -29,7 +29,7 @@ public class CoreController {
 
     // Link to access user's arms workout page (localhost:8080/workout/arms/{user})
     @GetMapping("{user}")
-    public String getUserTechniques(
+    public String getUserCoreWorkout(
         @PathVariable(name = "user", required = true) String user,
         Model model) {
             List<TkdWorkout> workoutList = tkdWorkSvc.retrieveWorkout(user);

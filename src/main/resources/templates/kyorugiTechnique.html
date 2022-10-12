@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUS Kyorugi Technique</title>
+    <link data-th-href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" data-th-href="@{/css2/training.css}">
+    <link rel="icon" data-th-href="@{/images/Side Kick Icon.png}">
+</head>
+<marquee behavior="" direction="" style="background-color: rgb(239,124,0); color: rgb(0,61,124);">
+    <span data-th-text="${username}"></span>, Be sure to end your workout within 2 hours to avoid losing your workout session record (Press the logo to return home)
+</marquee>
+<body data-th-background="@{/images/NUS Background.jpg}" style="background-size: cover; background-blend-mode: overlay; background-color: rgba(255, 255, 255, 0.486)">
+
+    <!-- Date/Time and Log out positioned at top right corner -->
+    <h6 class="text-end"><span data-th-text="${date}"></span></h6>
+    <a class="text-decoration-none" data-th-href="@{/}"><h6 class="text-end">Log out</h6></a>
+    <a class="text-decoration-none text-center rounded readme-box" data-th-href="@{/documentation.html}"><h6 class="text-start">Read me</h6></a>
+    <!-- Home container -->
+    <div class="container text-start mb-3 home-div">
+        <a data-th-href="@{/home?user={user}(user=${username})}">
+            <img class="rounded" data-th-src="@{/images/NUS Logo.jpeg}" alt="" height="100px">
+        </a>
+        <span class="display-6 text-white">Taekwondo</span>
+    </div>
+    <!-- Navigation container -->
+    <a class="text-decoration-none" data-th-href="@{/kyorugi/{user}(user=${username})}">
+        <div class="container text-center py-1 mb-3 navi-div">
+            <img class="rounded-circle mx-2" data-th-src="@{/images/Workout Icon.jpg}" alt="" height="30px">
+            <span>Select other training OR End training</span>
+        </div>   
+    </a>
+    <!-- Addition container -->
+    <div class="container text-center mb-2 addition-div" data-th-if="${!empty}">
+        <span data-th-text="${lastWorkout.sets}"></span> set(s) of <span data-th-text="${lastWorkout.name}"></span> has been completed
+    </div>
+    
+</body>
+</html>

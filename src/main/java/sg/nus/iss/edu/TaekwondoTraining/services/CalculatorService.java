@@ -138,6 +138,44 @@ public class CalculatorService {
         return intensityScore;
     }
 
+    public Integer KyorugiDurationCalculator(String intensity, Integer duration, Integer sets) {
+        double is = 0;
+
+        if (intensity.equals("low")) {
+            is = duration*sets*0.7;
+        } else if (intensity.equals("moderate")) {
+            is = duration*sets;
+        } else if (intensity.equals("high")) {
+            is = duration*sets*1.2;
+        } else if (intensity.equals("extreme")) {
+            is = duration*sets*1.5;
+        } else {
+            
+        }
+
+        Integer intensityScore = (int)is;
+        return intensityScore;
+    }
+
+    public Integer KyorugiRepetitionCalculator(String intensity, Integer repetition, Integer sets) {
+        double is = 0;
+
+        if (intensity.equals("low")) {
+            is = repetition*sets*0.7;
+        } else if (intensity.equals("moderate")) {
+            is = repetition*sets;
+        } else if (intensity.equals("high")) {
+            is = repetition*sets*1.2;
+        } else if (intensity.equals("extreme")) {
+            is = repetition*sets*1.5;
+        } else {
+            
+        }
+
+        Integer intensityScore = (int)is;
+        return intensityScore;
+    }
+
     public String MessageGenerator(Integer totalIntensityScore) {
         if (totalIntensityScore <= 500) {
             return "ARE YOU EVEN TRYING??!!?!";
