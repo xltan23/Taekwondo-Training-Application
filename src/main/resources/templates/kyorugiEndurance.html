@@ -11,7 +11,7 @@
 <marquee behavior="" direction="" style="background-color: rgb(239,124,0); color: rgb(0,61,124);">
     <span data-th-text="${username}"></span>, Be sure to end your workout within 2 hours to avoid losing your workout session record (Press the logo to return home)
 </marquee>
-<body data-th-background="@{/images/NUS Background.jpg}" style="background-size: cover; background-blend-mode: overlay; background-color: rgba(255, 255, 255, 0.486)">
+<body data-th-background="@{/images/Kyorugi Endurance Background.jpg}" style="background-size: cover; background-blend-mode: overlay; background-color: rgba(255, 255, 255, 0.486)">
 
     <!-- Date/Time and Log out positioned at top right corner -->
     <h6 class="text-end"><span data-th-text="${date}"></span></h6>
@@ -35,6 +35,625 @@
     <div class="container text-center mb-2 addition-div" data-th-if="${!empty}">
         <span data-th-text="${lastWorkout.sets}"></span> set(s) of <span data-th-text="${lastWorkout.name}"></span> has been completed
     </div>
-    
+     <!-- Workout list and Workout options container -->
+     <div class="container text-center">
+        <div class="container row pt-2 mb-2">
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Single Knee-up + Kick</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Static bounce, Knee-up and turning kick. Repeat this rapidly</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/endurance/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Single Knee-up + Kick</span></label>
+                            <input type="hidden" name="repName" value="Single Knee-up + Kick">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="80">10/S</option>
+                                    <option value="120">15/S</option>
+                                    <option value="160">20/S</option>
+                                    <option value="240">30/S</option>
+                                    <option value="320">40/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Speed Turning Kicks</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Static bounce and turning kick. Repeat this rapidly</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/endurance/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Speed Turning Kicks</span></label>
+                            <input type="hidden" name="repName" value="Speed Turning Kicks">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="70">10/S</option>
+                                    <option value="105">15/S</option>
+                                    <option value="140">20/S</option>
+                                    <option value="210">30/S</option>
+                                    <option value="280">40/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Speed Alternate Turning Kicks</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Static bounce and alternate left right turning kick. Repeat this rapidly</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/endurance/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Speed Alternate Turning Kicks</span></label>
+                            <input type="hidden" name="repName" value="Speed Alternate Turning Kicks">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="35">10</option>
+                                    <option value="56">16</option>
+                                    <option value="70">20</option>
+                                    <option value="105">30</option>
+                                    <option value="140">40</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Bullet Turning Kicks</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Static bullet turning kick. Repeat this rapidly</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/endurance/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Bullet Turning Kicks</span></label>
+                            <input type="hidden" name="repName" value="Bullet Turning Kicks">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="56">16</option>
+                                    <option value="70">20</option>
+                                    <option value="105">30</option>
+                                    <option value="140">40</option>
+                                    <option value="210">60</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Hanging Pyramid Turn Kicks</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Static turning kicks without putting down kicking leg. Order: x1, x2, x3, x2, x1 (Depends on repetition)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/endurance/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Hanging Pyramid Turn Kicks</span></label>
+                            <input type="hidden" name="repName" value="Hanging Pyramid Turn Kicks">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="72">3/S</option>
+                                    <option value="128">4/S</option>
+                                    <option value="200">5/S</option>
+                                    <option value="288">6/S</option>
+                                    <option value="512">8/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container row pt-2 mb-2">
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Hanging Pyramid Side Checks</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Static side checks without putting down kicking leg. Order: x1, x2, x3, x2, x1 (Depends on repetition)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/endurance/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Hanging Pyramid Side Checks</span></label>
+                            <input type="hidden" name="repName" value="Hanging Pyramid Side Checks">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="72">3/S</option>
+                                    <option value="128">4/S</option>
+                                    <option value="200">5/S</option>
+                                    <option value="288">6/S</option>
+                                    <option value="512">8/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Moving Knee-up + Turning Kicks</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Moving forward and backward with bounce, knee up, kick, repeat. Perform as rapidly as possible</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/endurance/saveduration" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Moving Knee-up + Turning Kicks</span></label>
+                            <input type="hidden" name="durName" value="Moving Knee-up + Turning Kicks">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="duration"><small>Distance</small></label>
+                                <select name="duration" id="duration">
+                                    <option value="40">5m/S</option>
+                                    <option value="80">10m/S</option>
+                                    <option value="160">20m/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Moving Single Side Turning Kicks</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Moving forward and backward with bounce and kick, repeat. Perform as rapidly as possible</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/endurance/saveduration" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Moving Single Side Turning Kicks</span></label>
+                            <input type="hidden" name="durName" value="Moving Single Side Turning Kicks">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="duration"><small>Distance</small></label>
+                                <select name="duration" id="duration">
+                                    <option value="40">5m/S</option>
+                                    <option value="80">10m/S</option>
+                                    <option value="160">20m/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Moving Alternate Turning Kicks</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Moving forward and backward with alternate left right turning kicks. Perform as rapidly as possible</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/endurance/saveduration" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Moving Alternate Turning Kicks</span></label>
+                            <input type="hidden" name="durName" value="Moving Alternate Turning Kicks">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="duration"><small>Distance</small></label>
+                                <select name="duration" id="duration">
+                                    <option value="40">5m/S</option>
+                                    <option value="80">10m/S</option>
+                                    <option value="160">20m/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Moving Bullet Kicks</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Moving forward and backward with bullet kicks. Perform as rapidly as possible</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/endurance/saveduration" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Moving Bullet Kicks</span></label>
+                            <input type="hidden" name="durName" value="Moving Bullet Kicks">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="duration"><small>Distance</small></label>
+                                <select name="duration" id="duration">
+                                    <option value="50">5m/S</option>
+                                    <option value="100">10m/S</option>
+                                    <option value="200">20m/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container row pt-2 mb-2">
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Moving Hanging Turn Kicks</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Moving forward and backward with turning kicks without putting kicking leg down. Perform as rapidly as possible</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/endurance/saveduration" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Moving Hanging Turn Kicks</span></label>
+                            <input type="hidden" name="durName" value="Moving Hanging Turn Kicks">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="duration"><small>Distance</small></label>
+                                <select name="duration" id="duration">
+                                    <option value="40">5m/S</option>
+                                    <option value="80">10m/S</option>
+                                    <option value="160">20m/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Moving Hanging Front Check</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Moving forward and backward with front check without putting kicking leg down. Perform as rapidly as possible</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/endurance/saveduration" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Moving Hanging Front Check</span></label>
+                            <input type="hidden" name="durName" value="Moving Hanging Front Check">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="duration"><small>Distance</small></label>
+                                <select name="duration" id="duration">
+                                    <option value="40">5m/S</option>
+                                    <option value="80">10m/S</option>
+                                    <option value="160">20m/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">60 Kicks</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">10x Single side turn kicks (Left and Right), 20x Alternate turn kicks, 20x bullet kicks</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/endurance/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">60 Kicks</span></label>
+                            <input type="hidden" name="repName" value="60 Kicks">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="180">60</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Target Sparring (Kick Count)</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Perform any combination kicks in different repetitions/sets (i.e. 2x[10 sets], or 5x[5 sets])</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/endurance/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Target Sparring (Kick Count)</span></label>
+                            <input type="hidden" name="repName" value="Target Sparring (Kick Count)">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="20">2</option>
+                                    <option value="30">3</option>
+                                    <option value="40">4</option>
+                                    <option value="50">5</option>
+                                    <option value="80">8</option>
+                                    <option value="100">10</option>
+                                    <option value="200">20</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Target Sparring (Time-based)</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Perform any number of combination kicks in specified duration</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/endurance/saveduration" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="durName"><span class="form-input-label">Target Sparring (Time-based)</span></label>
+                            <input type="hidden" name="durName" value="Target Sparring (Time-based)">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="duration"><small>Duration</small></label>
+                                <select name="duration" id="duration">
+                                    <option value="50">10s</option>
+                                    <option value="100">20s</option>
+                                    <option value="150">30s</option>
+                                    <option value="225">45s</option>
+                                    <option value="300">60s</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

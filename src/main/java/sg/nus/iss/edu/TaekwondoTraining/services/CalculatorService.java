@@ -142,13 +142,13 @@ public class CalculatorService {
         double is = 0;
 
         if (intensity.equals("low")) {
-            is = duration*sets*0.7;
-        } else if (intensity.equals("moderate")) {
             is = duration*sets;
+        } else if (intensity.equals("moderate")) {
+            is = duration*sets*1.4;
         } else if (intensity.equals("high")) {
-            is = duration*sets*1.2;
+            is = duration*sets*1.8;
         } else if (intensity.equals("extreme")) {
-            is = duration*sets*1.5;
+            is = duration*sets*2.3;
         } else {
             
         }
@@ -161,13 +161,13 @@ public class CalculatorService {
         double is = 0;
 
         if (intensity.equals("low")) {
-            is = repetition*sets*0.7;
-        } else if (intensity.equals("moderate")) {
-            is = repetition*sets;
-        } else if (intensity.equals("high")) {
             is = repetition*sets*1.2;
+        } else if (intensity.equals("moderate")) {
+            is = repetition*sets*1.8;
+        } else if (intensity.equals("high")) {
+            is = repetition*sets*2.1;
         } else if (intensity.equals("extreme")) {
-            is = repetition*sets*1.5;
+            is = repetition*sets*2.5;
         } else {
             
         }
