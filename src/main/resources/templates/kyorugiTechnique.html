@@ -35,6 +35,585 @@
     <div class="container text-center mb-2 addition-div" data-th-if="${!empty}">
         <span data-th-text="${lastWorkout.sets}"></span> set(s) of <span data-th-text="${lastWorkout.name}"></span> has been completed
     </div>
-    
+     <!-- Workout list and Workout options container -->
+     <div class="container text-center">
+        <div class="container row pt-2 mb-2">
+            <div class="col">
+                <div class="container text-center mod-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Direct Switch</div>
+                            <p class="image2-moddescription">Moderate Intensity</p>
+                            <p class="image2-description2">Switch and kick with the back foot</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/footwork/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Direct Switch</span></label>
+                            <input type="hidden" name="repName" value="Direct Switch">
+                            <input type="hidden" name="intensity" value="moderate">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="12">6/S</option>
+                                    <option value="16">8/S</option>
+                                    <option value="20">10/S</option>
+                                    <option value="24">12/S</option>
+                                    <option value="32">16/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Jumping Backthrust</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Switch and backthrust in midair with the back foot</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/footwork/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Jumping Backthrust</span></label>
+                            <input type="hidden" name="repName" value="Jumping Backthrust">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="12">6/S</option>
+                                    <option value="16">8/S</option>
+                                    <option value="20">10/S</option>
+                                    <option value="24">12/S</option>
+                                    <option value="32">16/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Long Turn + Long Follow-up</div>
+                            <p class="image2-highdescription">Moderate Intensity</p>
+                            <p class="image2-description2">Long turning with any of the long follow-up (Turning/Inward Crescent/Slamming)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/footwork/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Long turn + Long Follow-up</span></label>
+                            <input type="hidden" name="repName" value="Long turn + Long Follow-up">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="24">6/S</option>
+                                    <option value="32">8/S</option>
+                                    <option value="40">10/S</option>
+                                    <option value="48">12/S</option>
+                                    <option value="64">16/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Long Turn + Short Follow-up</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Long turning with any of the short follow-up (Turning/Inward Crescent/Slamming/Front Hook)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/footwork/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Long turn + Short Follow-up</span></label>
+                            <input type="hidden" name="repName" value="Long turn + Short Follow-up">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="24">6/S</option>
+                                    <option value="32">8/S</option>
+                                    <option value="40">10/S</option>
+                                    <option value="48">12/S</option>
+                                    <option value="64">16/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Short Turn + Short Follow-up</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Short turning with any of the short follow-up (Turning/Inward Crescent/Slamming/Front hook)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/footwork/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Short turn + Short Follow-up</span></label>
+                            <input type="hidden" name="repName" value="Short turn + Short Follow-up">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="24">6/S</option>
+                                    <option value="32">8/S</option>
+                                    <option value="40">10/S</option>
+                                    <option value="48">12/S</option>
+                                    <option value="64">16/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container row pt-2 mb-2">
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Short Front-check + Long Follow-up</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Short front-check kick with any of the long follow-up (Turning/Inward Crescent/Slamming)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/footwork/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Short Front-check + Long Follow-up</span></label>
+                            <input type="hidden" name="repName" value="Short Front-check + Long Follow-up">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="24">6/S</option>
+                                    <option value="32">8/S</option>
+                                    <option value="40">10/S</option>
+                                    <option value="48">12/S</option>
+                                    <option value="64">16/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Short Front-check + Short Follow-up</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Short front-check kick with any of the short follow-up (Turning/Inward Crescent/Slamming)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/footwork/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Short Front-check + Short Follow-up</span></label>
+                            <input type="hidden" name="repName" value="Short Front-check + Short Follow-up">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="24">6/S</option>
+                                    <option value="32">8/S</option>
+                                    <option value="40">10/S</option>
+                                    <option value="48">12/S</option>
+                                    <option value="64">16/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center high-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Short Front-check + Advanced</div>
+                            <p class="image2-highdescription">High Intensity</p>
+                            <p class="image2-description2">Short front-check kick with any of the short advanced follow-up (Double low-high turning/Jumping backthrust/Jumping hook)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/footwork/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Short Front-check + Advanced</span></label>
+                            <input type="hidden" name="repName" value="Short Front-check + Advanced">
+                            <input type="hidden" name="intensity" value="high">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="24">6/S</option>
+                                    <option value="32">8/S</option>
+                                    <option value="40">10/S</option>
+                                    <option value="48">12/S</option>
+                                    <option value="64">16/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Combo 1 (3 Kicks)</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Short turning, 360 turning, Reverse hook</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/footwork/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Combo 1 (3 Kicks)</span></label>
+                            <input type="hidden" name="repName" value="Combo 1 (3 Kicks)">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="18">3/S</option>
+                                    <option value="30">5/S</option>
+                                    <option value="48">8/S</option>
+                                    <option value="60">10/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Combo 2 (3 Kicks)</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Short Check, Jumping backthrust,360 Reverse hook</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/footwork/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Combo 2 (3 Kicks)</span></label>
+                            <input type="hidden" name="repName" value="Combo 2 (3 Kicks)">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="18">3/S</option>
+                                    <option value="30">5/S</option>
+                                    <option value="48">8/S</option>
+                                    <option value="60">10/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container row pt-2 mb-2">
+            <div class="col">
+                <div class="container text-center extreme-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Combo 3 (3 Kicks)</div>
+                            <p class="image2-extremedescription">Extreme Intensity</p>
+                            <p class="image2-description2">Skip short turn, front-hook+turning, jumping front thrust</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/footwork/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Combo 3 (3 Kicks)</span></label>
+                            <input type="hidden" name="repName" value="Combo 3 (3 Kicks)">
+                            <input type="hidden" name="intensity" value="extreme">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="18">3/S</option>
+                                    <option value="30">5/S</option>
+                                    <option value="48">8/S</option>
+                                    <option value="60">10/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center mod-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Front Step + Follow-up</div>
+                            <p class="image2-moddescription">Moderate Intensity</p>
+                            <p class="image2-description2">Step forward/Switch with any of the short follow-up (Skipping turn/side/slamming/outward crescent)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/footwork/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Front Step + Follow-up</span></label>
+                            <input type="hidden" name="repName" value="Front Step + Follow-up">
+                            <input type="hidden" name="intensity" value="moderate">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="12">6/S</option>
+                                    <option value="16">8/S</option>
+                                    <option value="20">10/S</option>
+                                    <option value="24">12/S</option>
+                                    <option value="32">16/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center mod-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Front Step + Advanced</div>
+                            <p class="image2-moddescription">Moderate Intensity</p>
+                            <p class="image2-description2">Step forward/Switch with any of the short advanced follow-up (Skipping front-hook+turn)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/footwork/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Front Step + Advanced</span></label>
+                            <input type="hidden" name="repName" value="Front Step + Advanced">
+                            <input type="hidden" name="intensity" value="moderate">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="12">6/S</option>
+                                    <option value="16">8/S</option>
+                                    <option value="20">10/S</option>
+                                    <option value="24">12/S</option>
+                                    <option value="32">16/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container text-center mod-box">
+                    <div class="image2">
+                        <img data-th-src="@{/images/NUS Logo.jpg}" alt="" width="150px" height="150px">
+                        <div class="image2-overlay">
+                            <div class="image2-title">Back Step + Follow-up</div>
+                            <p class="image2-moddescription">Moderate Intensity</p>
+                            <p class="image2-description2">Step backward/Switch with any of the long follow-up (Direct switch/Backthrust/Jumping Backthrust/Reverse Hook)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="/kyorugi/footwork/saverepetition" method="POST">
+                            <input type="hidden" name="user" data-th-value="${username}">
+                            <label for="repName"><span class="form-input-label">Back Step + Follow-up</span></label>
+                            <input type="hidden" name="repName" value="Back Step + Follow-up">
+                            <input type="hidden" name="intensity" value="moderate">
+                            <div>
+                                <label for="repetition"><small>Repetition</small></label>
+                                <select name="repetition" id="repetition">
+                                    <option value="12">6/S</option>
+                                    <option value="16">8/S</option>
+                                    <option value="20">10/S</option>
+                                    <option value="24">12/S</option>
+                                    <option value="32">16/S</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sets"><small>Set Count</small></label>
+                                <select name="sets" id="sets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <input class="mt-2" type="image" data-th-src="@{/images/Add Icon.jpg}" alt="Submit" width="40px" height="30px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
