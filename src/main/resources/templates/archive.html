@@ -16,8 +16,6 @@
     <!-- Date/Time and Log out positioned at top right corner -->
     <h6 class="text-end"><span data-th-text="${date}"></span></h6>
     <a class="text-decoration-none" data-th-href="@{/}"><h6 class="text-end">Log out</h6></a>
-    <!-- Read Me container -->
-    <a class="text-decoration-none text-center rounded readme-box" data-th-href="@{/documentation.html}"><h6 class="text-start">Read me</h6></a>
     <!-- Home container -->
     <a class="text-decoration-none" data-th-href="@{/home?user={user}(user=${username})}">
         <div class="container text-center mb-4 home-div">
@@ -126,7 +124,7 @@
             </div>
         </div>
     </div>
-
-
+    <!-- Read me positioned at bottom left corner -->
+    <a class="text-decoration-none text-center rounded readme-box" data-th-href="@{/documentation.html}"><h6 class="text-start">Read me</h6></a>
 </body>
 </html>

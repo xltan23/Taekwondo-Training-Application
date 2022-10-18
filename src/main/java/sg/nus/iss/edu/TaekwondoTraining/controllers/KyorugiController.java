@@ -103,4 +103,19 @@ public class KyorugiController {
         model.addAttribute("message", calSvc.MessageGenerator(totalIntensityScore));
         return "summary";
     }
+
+    // Form info post to (localhost:8080/kyorugi/clear)
+    // Clear all workout in temporary list
+    // Return to (localhost:8080/kyorugi/{user}) 
+    @PostMapping(value = "/clear", consumes="application/x-www-form-urlencoded", produces="text/html")
+    public String clearSession(@RequestBody MultiValueMap<String,String> form, Model model) {
+        // Set the user
+        String user = form.getFirst("user");
+
+        // Clearing session data for user
+        tkdWorkSvc.clearSession(user);
+
+        String userTrim = user.replaceAll(" ", "%20");
+        return "redirect:/kyorugi/%s".formatted(userTrim);
+    }
 }

@@ -72,6 +72,14 @@ public class TkdWorkoutService {
         tkdWorkRepo.save(name, newPayload);
     }
 
+    // Clear all workout for the session
+    public void clearSession(String name) {
+        JsonArray ja = Json.createArrayBuilder()
+            .build();
+        String clearPayload = ja.toString();
+        tkdWorkRepo.save(name, clearPayload);
+    }
+
         // List to JsonArray method that supports up to 10 entries
         private String listToJson(List<TkdWorkout> list) {
             int size = list.size();

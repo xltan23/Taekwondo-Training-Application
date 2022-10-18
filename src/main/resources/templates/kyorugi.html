@@ -16,7 +16,6 @@
     <!-- Date/Time and Log out positioned at top right corner -->
     <h6 class="text-end"><span data-th-text="${date}"></span></h6>
     <a class="text-decoration-none" data-th-href="@{/}"><h6 class="text-end">Log out</h6></a>
-    <a class="text-decoration-none text-center rounded readme-box" data-th-href="@{/documentation.html}"><h6 class="text-start">Read me</h6></a>
     <!-- Home container -->
     <div class="container text-start mb-3 home-div">
         <a data-th-href="@{/home?user={user}(user=${username})}">
@@ -30,8 +29,8 @@
             <input type="hidden" name="user" data-th-value="${username}">
             <label for="workoutName" class="mx-2"><span>End training?</span></label>
             <input type="text" id="end-input" name="workoutName" placeholder="Name your training session" size="30" required>
-            <input type="submit" value="Submit">
-            <!-- <input type="image" class="mx-3" data-th-src="@{/images/Workout Submit Icon.jpg}" alt="Submit" width="20px" height="30px"> -->
+            <!-- <input type="submit" value="Submit"> -->
+            <input type="image" class="mx-3 end-submit" data-th-src="@{/images/End Icon.png}" alt="Submit" width="50px" height="30px">
         </form>
     </div>
     <!-- Heading containers -->
@@ -105,5 +104,13 @@
             </div>
         </div>
     </div>
+    <!-- Read me positioned at bottom left corner -->
+    <a class="text-decoration-none text-center rounded readme-box" data-th-href="@{/documentation.html}"><h6 class="text-start">Read me</h6></a>
+    <!-- Clear session data at bottom right corner -->
+    <form class="clear-box" action="/kyorugi/clear" method="POST">
+        <input type="hidden" name="user" data-th-value="${username}">
+        <!-- <input type="submit" value="Clear Session"> -->
+        <input type="image" data-th-src="@{/images/Clear Session Icon.png}" alt="Submit" width="120px" height="40px">
+    </form>
 </body>
 </html>

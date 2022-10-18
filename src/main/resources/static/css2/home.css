@@ -190,11 +190,20 @@
     opacity: 0.9;
 }
 
+.clear-box {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 500px;
+    left: 1150px;
+    width: 120px;
+}
+
 .readme-box {
     display: flex;
     justify-content: center;
     position: sticky;
-    top: 550px;
+    top: 530px;
     left: 5px;
     width: 80px;
     background-color: rgb(0, 61, 124);
